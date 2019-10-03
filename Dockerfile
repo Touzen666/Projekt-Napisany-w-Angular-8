@@ -2,6 +2,7 @@
 FROM node:12 AS core
 WORKDIR /app
 ADD package.json /app/package.json
+ADD angular.json /app/angular.json
 ADD package-lock.json /app/package-lock.json
 RUN npm install -g @angular/cli@latest && \
     npm install
