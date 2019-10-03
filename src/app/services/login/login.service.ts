@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   public login(login: string, password: string, on_success: any): any {
-    return this.http.post<ReturnToken>('http://backen//login', {
+    return this.http.post<ReturnToken>('http://backend/login', {
       username: login,
       password: password
     }).subscribe(function (request: ReturnToken) {
