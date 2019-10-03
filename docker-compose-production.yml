@@ -8,7 +8,7 @@ services:
       - "3306:3306"
     expose:
       - "3306"
-    image: smokserwis/Projekt-Napisany-w-Angular-8:mysql
+    image: smokserwis/projekt-napisany-w-angular-8:mysql
     deploy:
      replicas: 1
      update_config:
@@ -17,7 +17,7 @@ services:
       restart_policy:
         condition: on-failure
   backend:
-    image: smokserwis/Projekt-Napisany-w-Angular-8:backend
+    image: smokserwis/projekt-napisany-w-angular-8:backend
     expose:
       - "80"
     links:
@@ -31,7 +31,7 @@ services:
         delay: 10s
         restart_policy: on-failure
   frontend:
-    image: smokserwis/Projekt-Napisany-w-Angular-8:frontend
+    image: smokserwis/projekt-napisany-w-angular-8:frontend
     ports:
       - "80:80"
     links:
