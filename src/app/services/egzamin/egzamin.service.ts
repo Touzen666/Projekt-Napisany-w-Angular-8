@@ -13,7 +13,7 @@ export class EgzaminService {
   public getEgzaminy(): Observable<Egzamin[]> {
     let token = localStorage.getItem('token');
 
-    return this.http.post<Egzamin[]>('http://localhost:8000/egzamin', {}, {
+    return this.http.post<Egzamin[]>('http://backend/egzamin', {}, {
       headers: {
         Authorization: token
       }
@@ -23,7 +23,7 @@ export class EgzaminService {
   public getPytania(idEgzaminu): Observable<Pytanie[]> {
     let token = localStorage.getItem('token');
 
-    return this.http.post<Pytanie[]>(`http://localhost:8000/egzamin/${idEgzaminu}/pytania`, {}, {
+    return this.http.post<Pytanie[]>(`http://backend/egzamin/${idEgzaminu}/pytania`, {}, {
       headers: {
         Authorization: token
       }

@@ -13,7 +13,7 @@ export class UserService {
 
     let token = localStorage.getItem('token');
 
-    return this.http.post<Pracownik>(`http://localhost:8000/pracownicy/current`, {}, {
+    return this.http.post<Pracownik>(`http://backend/pracownicy/current`, {}, {
       headers: {
         Authorization: token
       }

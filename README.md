@@ -1,8 +1,38 @@
 # OutsourcingPlApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+The main architecture of the application. It splits into three tires:
 
-## Development server
+1. MySQL database - there's only one
+2. Backends - might be scaled as per need, these are only to execute orders from frontend and transact with the DB
+3. Frontends- you just might throw as many of them. They communicate only directly with the backend.
+
+All of this setup is managed by [docker-compose](https://docs.docker.com/compose/gettingstarted/).
+
+# Caveat emptor
+
+Your Docker Toolbox VM by default reports at 192.168.99.100. If it shall report at a different address, make sure to adjust it.
+
+## How to run
+
+First download Docker Toolbox. Then, having a Docker instance, issue the following:
+```bash
+git clone https://github.com/Touzen666/Projekt-Napisany-w-Angular-8.git
+cd Projekt-Napisany-w-Angular-8
+docker-compose up -d
+```
+
+And enjoy your application at http://192.168.99.100
+
+Ad good idea would be to install a Portainer to manage all these containers. You can do it via
+```bash
+docker volume create portainer_data
+docker run -d --restart always -p 9000:9000 -v portainer_data:/data -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+```
+
+It will appear at http://192.168.99.100:9000 and and you to define some basic authentication issues with a very nice GUI interface.
+After that, you should pick manage local instance.
+
+Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -25,3 +55,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+See [license](LICENSE.md) for licensing things.

@@ -1,0 +1,5 @@
+*.sh eol=lf
+*.docx -text
+*.doc -text
+*.png -text
+*.PNG -text

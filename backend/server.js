@@ -11,7 +11,7 @@ var mysql = require('mysql');
 
 //local mysql db connection
 var connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'mysql',
     user: 'root',
     password: 'testpassword',
     database: 'outsourcing.pl'
@@ -192,5 +192,5 @@ app.post('/pracownicy/:idUzytkowina', [authorize], function (req, res, next) {
         }
     )
 })
-app.listen(8000);
-console.info("Server listening on 8000")
+app.listen(80);
+console.info("Server listening on 80")

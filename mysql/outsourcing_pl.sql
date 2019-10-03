@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `adresyfirm`
 --
 
-CREATE TABLE `adresyfirm` (
+CREATE TABLE IF NOT EXISTS `adresyfirm` (
   `idAdresyFirm` int(11) NOT NULL,
   `miejscowosc` varchar(50) COLLATE utf8_polish_ci NOT NULL,
   `kodPocztowy` int(11) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `adresyfirm` (
 -- Table structure for table `adresypracownikow`
 --
 
-CREATE TABLE `adresypracownikow` (
+CREATE TABLE IF NOT EXISTS `adresypracownikow` (
   `idAdresyPracownikow` int(11) NOT NULL,
   `miejscowosc` varchar(50) COLLATE utf8_polish_ci NOT NULL,
   `ulica` varchar(50) COLLATE utf8_polish_ci NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE `adresypracownikow` (
 -- Table structure for table `cv`
 --
 
-CREATE TABLE `cv` (
+CREATE TABLE IF NOT EXISTS `cv` (
   `idCV` int(11) NOT NULL,
   `jezykiProgramowania` text COLLATE utf8_polish_ci NOT NULL,
   `znajomoscTechnologi` text COLLATE utf8_polish_ci NOT NULL,
@@ -71,20 +71,20 @@ CREATE TABLE `cv` (
 -- Table structure for table `egzamin`
 --
 
-CREATE TABLE `egzamin` (
+CREATE TABLE IF NOT EXISTS `egzamin` (
   `idEgzaminu` int(11) NOT NULL,
   `czasRozpoczecia` datetime NOT NULL,
   `czasZakonczenia` datetime NOT NULL,
   `idStanowisko` int(11) NOT NULL,
   `idTworcyEgzaminu` int(11) NOT NULL,
   `nazwa` varchar(30) COLLATE utf8_polish_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Dumping data for table `egzamin`
 --
 
-INSERT INTO `egzamin` (`idEgzaminu`, `czasRozpoczecia`, `czasZakonczenia`, `idStanowisko`, `idTworcyEgzaminu`, `nazwa`) VALUES
+INSERT IGNORE INTO `egzamin` (`idEgzaminu`, `czasRozpoczecia`, `czasZakonczenia`, `idStanowisko`, `idTworcyEgzaminu`, `nazwa`) VALUES
 (1, '2019-07-01 00:00:00', '2019-07-02 00:00:00', 1, 1, 'Ezamin1');
 
 -- --------------------------------------------------------
@@ -93,7 +93,7 @@ INSERT INTO `egzamin` (`idEgzaminu`, `czasRozpoczecia`, `czasZakonczenia`, `idSt
 -- Table structure for table `kategorie`
 --
 
-CREATE TABLE `kategorie` (
+CREATE TABLE IF NOT EXISTS `kategorie` (
   `idKategorii` int(11) NOT NULL,
   `nazwaKategorii` varchar(100) COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
@@ -102,7 +102,7 @@ CREATE TABLE `kategorie` (
 -- Dumping data for table `kategorie`
 --
 
-INSERT INTO `kategorie` (`idKategorii`, `nazwaKategorii`) VALUES
+INSERT IGNORE INTO `kategorie` (`idKategorii`, `nazwaKategorii`) VALUES
 (1, 'systemy');
 
 -- --------------------------------------------------------
@@ -111,7 +111,7 @@ INSERT INTO `kategorie` (`idKategorii`, `nazwaKategorii`) VALUES
 -- Table structure for table `odpowiedzi`
 --
 
-CREATE TABLE `odpowiedzi` (
+CREATE TABLE IF NOT EXISTS `odpowiedzi` (
   `idOdpowiedzi` int(11) NOT NULL,
   `odpowiedz` varchar(500) COLLATE utf8_polish_ci NOT NULL,
   `idPytania` int(11) NOT NULL
@@ -121,7 +121,7 @@ CREATE TABLE `odpowiedzi` (
 -- Dumping data for table `odpowiedzi`
 --
 
-INSERT INTO `odpowiedzi` (`idOdpowiedzi`, `odpowiedz`, `idPytania`) VALUES
+INSERT IGNORE INTO `odpowiedzi` (`idOdpowiedzi`, `odpowiedz`, `idPytania`) VALUES
 (2, 'komputer', 2),
 (4, 'karta graficzna', 2),
 (6, 'procesor ', 2),
@@ -173,8 +173,7 @@ INSERT INTO `odpowiedzi` (`idOdpowiedzi`, `odpowiedz`, `idPytania`) VALUES
 --
 -- Table structure for table `pracownik`
 --
-
-CREATE TABLE `pracownik` (
+CREATE TABLE IF NOT EXISTS `pracownik` (
   `idPracownik` int(11) NOT NULL,
   `imie` varchar(30) COLLATE utf8_polish_ci NOT NULL,
   `nazwisko` varchar(50) COLLATE utf8_polish_ci NOT NULL,
@@ -188,7 +187,7 @@ CREATE TABLE `pracownik` (
 -- Dumping data for table `pracownik`
 --
 
-INSERT INTO `pracownik` (`idPracownik`, `imie`, `nazwisko`, `dataUrodzenia`, `login`, `haslo`, `email`) VALUES
+INSERT IGNORE INTO `pracownik` (`idPracownik`, `imie`, `nazwisko`, `dataUrodzenia`, `login`, `haslo`, `email`) VALUES
 (1, 'Bartosz', 'Ochoedowski', '2019-07-16', 'bartek', '59300', ''),
 (3, 'Bartosz', 'Ochędowski', '2017-07-01', 'adam', 'adam1', 'ochedowski.bartosz@gmail.com');
 
@@ -198,7 +197,7 @@ INSERT INTO `pracownik` (`idPracownik`, `imie`, `nazwisko`, `dataUrodzenia`, `lo
 -- Table structure for table `pytania`
 --
 
-CREATE TABLE `pytania` (
+CREATE TABLE IF NOT EXISTS `pytania` (
   `idPytania` int(11) NOT NULL,
   `trescPytania` varchar(500) COLLATE utf8_polish_ci NOT NULL,
   `idKategoria` int(11) NOT NULL,
@@ -209,7 +208,7 @@ CREATE TABLE `pytania` (
 -- Dumping data for table `pytania`
 --
 
-INSERT INTO `pytania` (`idPytania`, `trescPytania`, `idKategoria`, `idEgzaminu`) VALUES
+INSERT IGNORE INTO `pytania` (`idPytania`, `trescPytania`, `idKategoria`, `idEgzaminu`) VALUES
 (2, 'Jednostka centralna to ?', 1, 1),
 (4, 'Klawiatura to urządzenie ?', 1, 1),
 (6, 'Darmowy program graficzny dystrybucji Linux to?', 1, 1),
@@ -232,7 +231,7 @@ INSERT INTO `pytania` (`idPytania`, `trescPytania`, `idKategoria`, `idEgzaminu`)
 -- Table structure for table `sesje`
 --
 
-CREATE TABLE `sesje` (
+CREATE TABLE IF NOT EXISTS `sesje` (
   `token` int(11) NOT NULL,
   `pracownik_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
@@ -241,7 +240,7 @@ CREATE TABLE `sesje` (
 -- Dumping data for table `sesje`
 --
 
-INSERT INTO `sesje` (`token`, `pracownik_id`) VALUES
+INSERT IGNORE INTO `sesje` (`token`, `pracownik_id`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
@@ -294,7 +293,7 @@ INSERT INTO `sesje` (`token`, `pracownik_id`) VALUES
 -- Table structure for table `stanowisko`
 --
 
-CREATE TABLE `stanowisko` (
+CREATE TABLE IF NOT EXISTS `stanowisko` (
   `idStanowisko` int(11) NOT NULL,
   `nazwaStanowiska` varchar(100) COLLATE utf8_polish_ci NOT NULL,
   `opisStanowiska` varchar(150) COLLATE utf8_polish_ci NOT NULL
@@ -306,7 +305,7 @@ CREATE TABLE `stanowisko` (
 -- Table structure for table `tworcyegzaminu`
 --
 
-CREATE TABLE `tworcyegzaminu` (
+CREATE TABLE IF NOT EXISTS `tworcyegzaminu` (
   `idTworcyEgzaminu` int(11) NOT NULL,
   `nazwaFirmy` varchar(100) COLLATE utf8_polish_ci NOT NULL,
   `nip` int(11) NOT NULL,
@@ -320,7 +319,7 @@ CREATE TABLE `tworcyegzaminu` (
 -- Table structure for table `wczesniejszapraca`
 --
 
-CREATE TABLE `wczesniejszapraca` (
+CREATE TABLE IF NOT EXISTS `wczesniejszapraca` (
   `idWczesniejszaPraca` int(11) NOT NULL,
   `nazwaFirmy` varchar(100) COLLATE utf8_polish_ci NOT NULL,
   `nip` int(30) NOT NULL,
@@ -335,7 +334,7 @@ CREATE TABLE `wczesniejszapraca` (
 -- Table structure for table `wyksztalcenie`
 --
 
-CREATE TABLE `wyksztalcenie` (
+CREATE TABLE IF NOT EXISTS `wyksztalcenie` (
   `idWyksztalcenie` int(11) NOT NULL,
   `szkola` varchar(100) COLLATE utf8_polish_ci NOT NULL,
   `dataUrodzenia` int(11) NOT NULL,
@@ -349,7 +348,7 @@ CREATE TABLE `wyksztalcenie` (
 -- Table structure for table `wynikiegzaminu`
 --
 
-CREATE TABLE `wynikiegzaminu` (
+CREATE TABLE IF NOT EXISTS `wynikiegzaminu` (
   `otrzymanePunkty` int(11) NOT NULL,
   `idQuiz` int(11) NOT NULL,
   `idPracownik` int(11) NOT NULL,
@@ -440,73 +439,73 @@ ALTER TABLE `wczesniejszapraca`
 -- AUTO_INCREMENT for table `adresyfirm`
 --
 ALTER TABLE `adresyfirm`
-  MODIFY `idAdresyFirm` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY IF NOT EXISTS `idAdresyFirm` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `adresypracownikow`
 --
 ALTER TABLE `adresypracownikow`
-  MODIFY `idAdresyPracownikow` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY IF NOT EXISTS `idAdresyPracownikow` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `cv`
 --
 ALTER TABLE `cv`
-  MODIFY `idCV` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY IF NOT EXISTS `idCV` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `egzamin`
 --
 ALTER TABLE `egzamin`
-  MODIFY `idEgzaminu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY IF NOT EXISTS `idEgzaminu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kategorie`
 --
 ALTER TABLE `kategorie`
-  MODIFY `idKategorii` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY IF NOT EXISTS `idKategorii` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `odpowiedzi`
 --
 ALTER TABLE `odpowiedzi`
-  MODIFY `idOdpowiedzi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY IF NOT EXISTS `idOdpowiedzi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `pracownik`
 --
 ALTER TABLE `pracownik`
-  MODIFY `idPracownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY IF NOT EXISTS `idPracownik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `pytania`
 --
 ALTER TABLE `pytania`
-  MODIFY `idPytania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY IF NOT EXISTS `idPytania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `sesje`
 --
 ALTER TABLE `sesje`
-  MODIFY `token` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY IF NOT EXISTS `token` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `stanowisko`
 --
 ALTER TABLE `stanowisko`
-  MODIFY `idStanowisko` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY IF NOT EXISTS `idStanowisko` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tworcyegzaminu`
 --
 ALTER TABLE `tworcyegzaminu`
-  MODIFY `idTworcyEgzaminu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY IF NOT EXISTS `idTworcyEgzaminu` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `wczesniejszapraca`
 --
 ALTER TABLE `wczesniejszapraca`
-  MODIFY `idWczesniejszaPraca` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY IF NOT EXISTS `idWczesniejszaPraca` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
