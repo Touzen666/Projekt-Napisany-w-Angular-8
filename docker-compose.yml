@@ -7,23 +7,15 @@ services:
       - "3306:3306"
     expose:
       - "3306"
-    build:
-      context: mysql
-      dockerfile: Dockerfile
+    image: smokserwis/Projekt-Napisany-w-Angular-8:mysql
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: backend
+    image: smokserwis/Projekt-Napisany-w-Angular-8:backend
     expose:
       - "80"
     links:
       - mysql
   frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: frontend
+    image: smokserwis/Projekt-Napisany-w-Angular-8:frontend
     ports:
       - "80:80"
     links:
