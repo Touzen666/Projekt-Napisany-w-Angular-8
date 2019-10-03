@@ -1,10 +1,11 @@
 # OutsourcingPlApp
 
-The main architecture of the application. It splits into three tires:
+The main architecture of the application. It splits into four tiers:
 
 1. MySQL database - there's only one
 2. Backends - might be scaled as per need, these are only to execute orders from frontend and transact with the DB
 3. Frontends- you just might throw as many of them. They communicate only directly with the backend.
+4. A reverse proxy - the guys who routes some requests to the frontend, and some to the backend.
 
 All of this setup is managed by [docker-compose](https://docs.docker.com/compose/gettingstarted/).
 
@@ -41,6 +42,11 @@ After that, you should pick manage local instance.
 Just run [docker-compose-development.yml](docker-compose-development.yml).
 For seasoned deployments on Docker Swarm instances, you might as well utilize
 [docker-compose-production.yml](docker-compose-production.yml).
+Note that you need to have your Docker server working in Swarm mode, otherwise this will not work! You can do it typing a simple command:
+````bash
+https://docs.docker.com/engine/reference/commandline/swarm_init/
+````
+But before you do, look at the [extra materials here](https://docs.docker.com/engine/reference/commandline/swarm_init/).
 
 Development server
 
