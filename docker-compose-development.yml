@@ -1,4 +1,5 @@
 version: '3.7'
+# To be run only development issues
 services:
   mysql:
     volumes:

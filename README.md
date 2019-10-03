@@ -32,6 +32,13 @@ docker run -d --restart always -p 9000:9000 -v portainer_data:/data -v /var/run/
 It will appear at http://192.168.99.100:9000 and and you to define some basic authentication issues with a very nice GUI interface.
 After that, you should pick manage local instance.
 
+
+### Deploying it for development
+
+Just run [docker-compose-development.yml](docker-compose-development.yml).
+For seasoned deployments on Docker Swarm instances, you might as well utilize
+[docker-compose-production.yml](docker-compose-production.yml).
+
 Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
