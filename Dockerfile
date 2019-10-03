@@ -19,14 +19,14 @@ EXPOSE 80
 # Compile the frontend here
 FROM node:slim AS frontend_temp
 # Seeing as this is only a temporary image, we need to make as many layers to improve caching :D
-WORKDIR /app
-COPY --from=core /app/package.json /app/package.json
-COPY --from=core /app/angular.json /app/angular.json
-COPY --from=core  /app/package-lock.json /app/package-lock.json
 RUN npm install --unsafe-perm -g angular-cli
 RUN npm install -g @angular/cli
 RUN ng set --global warnings.packageDeprecation=false
 RUN mkdir -p /usr/lib/node_modules/angular-cli/node_modules/node-sass/vendor
+WORKDIR /app
+COPY --from=core /app/package.json /app/package.json
+COPY --from=core /app/angular.json /app/angular.json
+COPY --from=core  /app/package-lock.json /app/package-lock.json
 COPY --from=core /app /app
 RUN npm run build -- -c production
 
