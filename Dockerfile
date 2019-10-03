@@ -18,10 +18,9 @@ ENTRYPOINT ["/usr/bin/node", "server.js"]
 
 # Compile the frontend here
 FROM node:12 AS frontend_temp
-USER root
-WORKDIR /app
 
 COPY --from=core /app /app
+WORKDIR /app
 RUN npm install --unsafe-perm -g angular-cli && \
     npm install -g @angular/cli && \
     ng set --global warnings.packageDeprecation=false && \
@@ -30,6 +29,7 @@ RUN npm install --unsafe-perm -g angular-cli && \
 
 # And place the compiled frontend onto a real frontend :D
 FROM nginx:latest AS frontend
+RUN mkdir -p /app
 COPY --from=frontend_temp /app/dist /usr/share/nginx/html
 EXPOSE 80
 
