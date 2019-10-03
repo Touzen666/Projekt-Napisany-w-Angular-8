@@ -1,0 +1,34 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+<nav>
+    <div class="container">
+        <div class="clearfix">
+            <div class="float-left">
+                OUTSOURCING.PL
+            </div>
+            <div class="float-right row">
+
+                <div class="col-md-3"><a [routerLink]="['/']">STRONA GŁÓWNA</a></div>
+                <div class="col-md-3"><a [routerLink]="['/oferty']">PRACODAWCY</a></div>
+                <div class="col-md-3"><a [routerLink]="['/konto']">TWOJE KONTO</a></div>
+                <div class="col-md-3"><a [routerLink]="['/kontakt']">KONTAKT</a></div>
+
+            </div>
+        </div>
+        <login-box></login-box>
+    </div>
+</nav>
+
+
+<div id="widok">
+    <div id="container-fluid">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+<footer-box></footer-box>

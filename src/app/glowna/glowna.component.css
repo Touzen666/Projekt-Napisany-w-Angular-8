@@ -1,0 +1,98 @@
+nav {
+  background-color: #003FEB;
+}
+
+#widok {
+  height: 900px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #003FEB;
+  background-image: url(/assets/office.jpg);
+  background-repeat: no-repeat;
+  background-size: 40% 100%;
+}
+
+H1 {
+  color: white;
+  margin-left: 50px;
+  padding-top: 20px;
+  font-size: 40px;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 900px;
+  width: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+li {
+  color: white;
+  padding-left: 30px;
+  font-size: 23px;
+}
+
+#pone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 79%;
+}
+
+form #login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 83%;
+}
+
+#ptwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 79%;
+}
+
+form #haslo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 83%;
+}
+
+#zapisz {
+  margin-left: 86%;
+}
+
+img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 100px;
+  margin-top: 10%;
+}
+
+article {
+  text-align: left;
+  width: 700px;
+  margin-left: 800px;
+}
+
+H2 {
+  -webkit-text-decoration: underline #003FEB;
+          text-decoration: underline #003FEB;
+}
+
+#zarejstruj {
+  text-align: center;
+}
+
+#BO {
+  width: 100%;
+  text-align: right;
+  color: white;
+  background-color: #003FEB;
+}
+/*# sourceMappingURL=glowna.component.css.map */

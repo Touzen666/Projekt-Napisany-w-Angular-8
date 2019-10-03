@@ -1,0 +1,21 @@
+<div class="row">
+        <div class="col text-center">
+                <h3>TODO nazwa egzaminu</h3>
+        </div>
+</div>
+
+<div class="row">
+        <div *ngFor="let pytanie of pytania; index as i" style="padding: 5px" class="col-md-6">
+                <div class="card">
+                        [Kategoria: {{ pytanie.kategoria }}] <br>
+                        <b>{{i+1}}. {{ pytanie.tresc }} </b>
+                        <div class="radio">
+                                <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                                checked>
+                                        TODO pytanie
+                                </label>
+                        </div>
+                </div>
+        </div>
+</div>

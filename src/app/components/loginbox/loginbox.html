@@ -1,0 +1,19 @@
+<!-- jezeli jestes zalogowany to schowa sie pasek logowania i pojawi przycisk wyloguj -->
+<!-- <form class="form-inline" [hidden]="is_logged_in">
+  <input class="form-control mr-sm-2" type="login" placeholder="Login" aria-label="Login"
+    (input)="username = $event.target.value">
+  <input class="form-control mr-sm-2" type="password" placeholder="Hasło" aria-label="Login"
+    (input)="password = $event.target.value">
+  <button class="btn btn-primary" (click)="login()" id="login">Zaloguj</button>
+</form> -->
+
+<!-- jezeli jestes zalogowany to schowa sie pasek logowania i pojawi przycisk wyloguj -->
+<form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="login" placeholder="Login" (input)="username = $event.target.value"
+  aria-label="Search">
+  <input class="form-control mr-sm-2" type="password" placeholder="Hasło" aria-label="Login"
+  (input)="password = $event.target.value">
+  <button class="btn btn-primary" (click)="login()" id="login">Zaloguj</button>
+</form>
+
+<button class="btn btn-primary" [hidden]="!is_logged_in" (click)="logout()" id="logout">Wyloguj</button>

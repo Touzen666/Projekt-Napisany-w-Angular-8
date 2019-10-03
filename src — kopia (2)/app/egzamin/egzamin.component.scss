@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    min-width:900px;
+    max-width:1440px;
+    width:auto !important;
+    margin-left: auto; margin-right: auto;
+    
+    }
+nav{
+background-color: #003FEB;
+}
+#widok{
+
+      color: #ffffff;
+	  background-color: #003FEB;
+}
+H1 {
+    color: white;
+    margin-left: 50px;
+    padding-top: 20px;
+    
+    font-size: 40px;
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-left: 600px;
+    display: flex;
+    
+}
+
+nav li{
+    color:white;
+    padding-left: 30px;
+    font-size: 23px;
+}

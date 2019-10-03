@@ -1,0 +1,19 @@
+<!-- Ma pobierac zdjęcie od urzytkownika, 
+        zapisywac je w bazie i wyswietlac -->
+<a>Kliknij, aby załadować zdjęcie</a>
+
+<form>
+  Login: <input type="text" name="login" (input)="login = $event.target.value"><br>
+  Haslo: <input type="text" name="haslo" (input)="haslo = $event.target.value"><br>
+  Imię: <input type="text" name="imie" (input)="imie = $event.target.value"><br>
+  Nazwisko: <input type="text" name="nazwisko" (input)="nazwisko = $event.target.value"><br>
+  E-mail: <input type="text" name="e-mail" (input)="email = $event.target.value"><br>
+  Adres: <input type="text" name="adres" (input)="adres = $event.target.value"><br>
+  Data urodzenia: <input type="text" name="data_urodzenia" (input)="dataurodzenia = $event.target.value"><br>
+
+  <button (click)="register($event)" id="register">Wyślij</button>
+
+</form>
+
+<a>Kliknij, aby
+  załadować CV</a>

@@ -1,0 +1,31 @@
+<div>
+    <H2>OFERTY PRACY</H2>
+    <p>Witaj ! Przygotowaliśmy dla ciebie kilka ofert pracy i odpowiednio przygotowane egazminy. Wybierz firmę i
+        stanowisko:</p>
+</div>
+
+<section>
+    <div>
+        <img src="hands.jpg" alt="hands" height="220" width="320">
+
+        <H3>Firma 1</H3>
+        <a *ngFor="let egzamin of egzaminy" [routerLink]="['/egzamin/', egzamin.idEgzaminu]">
+            {{ egzamin.nazwa }}
+        </a>
+    </div>
+    <!-- <div>
+        <img src="laptop.jpg" alt="laptop" height="220" width="320">
+
+        <H4>Firma 2</H4>
+        <p>Stanowisko nr 1 (średnie zarobki 1750 netto)</p>
+        <p>Stanowisko nr 3 (średnie zarobki 3700 netto)</p>
+    </div>
+    <div>
+        <img src="man.jpg" alt="man" height="220" width="320">
+
+        <H5>Firma 3</H5>
+        <p>Stanowisko nr 1 (średnie zarobki 6300 netto)</p>
+        <p>Stanowisko nr 2 (średnie zarobki 4500 netto)</p>
+        <p>Stanowisko nr 3 (średnie zarobki 3700 netto)</p>
+    </div> -->
+</section>

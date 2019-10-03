@@ -1,0 +1,121 @@
+1.Jednostka centralna to ?
+a)komputer
+b)karta graficzna
+c)procesor =prawda
+2.Klawiatura to urządzenie ?
+a)wejścia -prawda
+b)wyjścia 
+c)wejścia i wyjścia
+3.Darmowy program graficzny dystrybucji Linux to?
+a)paint
+b)gimp-prawda
+c)corel
+4.Do tworzenia baz danych używamy ?
+a)word
+b)acces-prawda
+c)excel
+5.Wydajność w grach zależy głównie od?
+a)karty graficznej -prawda
+b)procesora
+c)ram'u
+6.Do ochrony komputera przed wirusami urzywamy?
+a)antywirusa=prawda
+b)firewala
+c)skanera
+7.Darmowe oprogramowanie to
+a)freeware-prawda
+b)shareware
+c)trail
+8.Do tworzenia prezentacji wykorzystamy?
+a)powerpoint -prawda
+b)excel 
+c)paint
+9.Co ile powinniśmy robić sobie przerwe podczas korzystania z komputera?
+a)30 min
+b)1h-prawda
+c)nie trzeba robić przerw
+10.Jezykiem programowania jest
+a)java-prawda
+b)niemiecki
+c)J00x
+11.Strony internetowe są w języku:
+a)html-prawda
+b)css
+c)javascript
+12.Wirusem dającym dostęp do komputera bez wiedzy użytkowanika jest ?
+a)backdoor- prawda
+b)trojan
+c)malware
+13.Wirus wyświerlający reklamy jest ?
+a)trojan
+b)malware
+c)adware-prawda
+
+0. Informatyka zajmuje się:
+analizą i modelowaniem matematycznym obiektów i układów różnej natury
+gromadzeniem, wyszukiwaniem i przetwarzaniem informacji za pomocą komputerów i odpowiedniego oprogramowania		V
+wytwarzaniem i przetwarzaniem sygnałów w postaci prądów i napięć elektrycznych
+1. Informacja to:
+sposób przekazywania komputerowi poleceń do wykonania
+zbiór danych, które są zarządzane przez tą samą jednostkę administracyjną
+czynnik, któremu człowiek może przypisać określony sens (znaczenie), aby móc ją wykorzystywać do różnych celów		V
+2. Komputer to:
+elektroniczna maszyna cyfrowa												V
+elektryczna maszyna robocza
+elektryczna maszyna cyfrowa
+3. Komputer służy do:
+gromadzenia i wyszukiwania informacji
+do przetwarzania wszelkich informacji, które można zapisać w formie ciągu cyfr albo sygnału ciągłego
+obie odpowiedzi są prawidłowe												V
+4. Do głównych cech komputera należy:
+możliwość zapamiętywania dużej ilości danych 										V
+szybkość obliczeń
+obie odpowiedzi są prawidłowe
+5. Oprogramowanie to inaczej:
+hardware
+software														V
+hywared
+6. Oprogramowanie:
+jest chronione prawem autorskim
+jest tworzone przez programistów
+obie odpowiedzi są prawidłowe												V	
+7. Oprogramowanie, które realizuje funkcje konieczne dla działania systemu komputerowego to:
+biblioteki programistyczne
+oprogramowanie użytkowe
+oprogramowanie systemowe												V
+8. Algorytm to:
+ciąg dowolnych czynności koniecznych do wykonania pewnego rodzaju zadań
+skończony, uporządkowany ciąg jasno zdefiniowanych czynności, koniecznych do wykonania pewnego rodzaju zadań
+skończony, nieuporządkowany ciąg czynności, koniecznych do wykonania pewnego rodzaju zadań				V
+9. Informacja „wewnątrz” systemów informatycznych zapisana jest w postaci:
+dziesiętnej
+binarnej														V
+szesnastkowej
+10. Zamiana systemu binarnego na dziesiętny to:
+konwekcja
+konwersja														V
+konwencja
+11. 1 bajt to:
+4 bity
+8 bitów															V
+16 bitów
+12. 1 kilobajt to:
+100 bajtów
+1000 bajtów														
+1024 bajty														V
+13. Język programowania to :
+analiza i modelowanie obiektów i układów różnej natury
+nieusystematyzowany sposób przekazywania komputerowi poleceń do wykonania
+usystematyzowany sposób przekazywania komputerowi poleceń do wykonania							V
+14. Edytory tekstu umożliwia:
+operowanie na blokach tekstu
+ustawianie parametrów wydruku dokumentu
+obie odpowiedzi są prawidłowe												V
+15. Arkusz kalkulacyjny umożliwia:
+automatyczne przetwarzanie danych
+tworzenie zestawień danych
+obie odpowiedzi są prawidłowe												V
+16. Programy graficzne umożliwiają:
+tworzenie animacji													V
+tworzenie pism urzędowych
+tworzenie zestawienia danych
