@@ -19,6 +19,18 @@ export class EgzaminPage implements OnInit {
     private pytania: Pytanie[];
     private odpowiedzi: { [index: number]: Odpowiedz[] };
 
+    public getPytania(): Pytanie[] {
+      return this.pytania;
+    }
+
+    public getEgzamin(): Egzamin {
+      return this.egzamin;
+    }
+
+    public getOdpowiedzi(): { [index: number]: Odpowiedz[]} {
+      return this.odpowiedzi;
+    }
+
     ngOnInit() {
         let idEgzaminu = this.activatedRoute.snapshot.params['id'];
 

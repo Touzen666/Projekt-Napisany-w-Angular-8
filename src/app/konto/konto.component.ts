@@ -12,7 +12,7 @@ import { Pracownik, UserService } from '../services/user/user.service';
 
 export class KontoPage implements OnInit {
     constructor(private userService: UserService) { }
-    private user: Pracownik;
+    public user: Pracownik;
     //  = {
     //     idPracownik: 1,
     //     imie: "Brtek",

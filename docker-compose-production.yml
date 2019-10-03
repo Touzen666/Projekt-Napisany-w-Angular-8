@@ -28,6 +28,8 @@ services:
     image: touzen666/projekt-napisany-w-angular-8/nginx
     ports:
       - "80:80"
+    environment:
+      - HOSTNAME="localhost"
     links:
       - frontend
       - backend

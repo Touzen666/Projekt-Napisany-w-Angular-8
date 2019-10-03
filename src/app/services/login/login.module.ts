@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
-        LoginService
+
     ],
     providers: [
         LoginService

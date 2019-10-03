@@ -5,13 +5,13 @@ import { RegistrationService } from './registration.service';
 
 @NgModule({
     declarations: [
-        RegistrationService
+      RegistrationService
     ],
     providers: [
       RegistrationService
     ],
     imports: [
-        HttpClientModule
+      HttpClientModule
     ],
     exports: [
       RegistrationService

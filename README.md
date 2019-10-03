@@ -7,10 +7,15 @@ The main architecture of the application. It splits into four tiers:
 3. Frontends- you just might throw as many of them. They communicate only directly with the backend.
 4. A reverse proxy - the guys who routes some requests to the frontend, and some to the backend.
 
+See [dockerfiles](/dockerfiles) for where most of these hide.
+[Build tools](/build_tools) support Travis when generating new images onto Docker Hub.
+
 All of this setup is managed by [docker-compose](https://docs.docker.com/compose/gettingstarted/).
 
 Name of the host should be defined in an environment variable called *HOSTNAME*! This is a must for nginx! Otherwise,
 first available hostname will be used.
+
+You can also view quite comprehensive [docs](/docs). Too bad they're mostly in Polish.
 
 # Caveat emptor
 
@@ -22,11 +27,10 @@ First download Docker Toolbox. Then, having a Docker instance, issue the followi
 ```bash
 git clone https://github.com/Touzen666/Projekt-Napisany-w-Angular-8.git
 cd Projekt-Napisany-w-Angular-8
-docker swarm init
-docker-compose up -d
+docker-compose -f docker-compose-production.yml up -d
 ```
 Just pass up the proper HOSTNAME that nginx is going to react to in it's environment variables of *HOSTNAME*, by 
-editing [this file](docker-compose-producton.yml).
+editing [this file](docker-compose-producton.yml#L32).
 And enjoy your application at http://192.168.99.100
 
 Ad good idea would be to install a Portainer to manage all these containers. You can do it via
@@ -38,17 +42,12 @@ docker run -d --restart always -p 9000:9000 -v portainer_data:/data -v /var/run/
 It will appear at http://192.168.99.100:9000 and and you to define some basic authentication issues with a very nice GUI interface.
 After that, you should pick manage local instance.
 
-
 ### Deploying it for development
 
-Just run [docker-compose-development.yml](docker-compose-development.yml).
-For seasoned deployments on Docker Swarm instances, you might as well utilize
-[docker-compose-production.yml](docker-compose-production.yml).
-Note that you need to have your Docker server working in Swarm mode, otherwise this will not work! You can do it typing a simple command:
-````bash
-https://docs.docker.com/engine/reference/commandline/swarm_init/
-````
-But before you do, look at the [extra materials here](https://docs.docker.com/engine/reference/commandline/swarm_init/).
+Just run [docker-compose-development.yml](docker-compose-development.yml) or [docker-compose-production.yml](docker-compose-production.yml),
+as you like :D
+
+# Remaining Angular bullshit
 
 Development server
 
