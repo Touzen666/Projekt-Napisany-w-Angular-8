@@ -9,5 +9,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 ENV HOSTNAME=localhost
 
 EXPOSE 80
-EXPOSE 443
 
