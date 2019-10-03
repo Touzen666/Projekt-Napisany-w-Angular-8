@@ -33,10 +33,6 @@ RUN npm install --unsafe-perm -g angular-cli && \
 RUN npm run build -- c- production
 
 FROM nginx:latest AS frontend
-COPY --from=frontend_temp
-
-ADD . /app
-WORKDIR /app
-ENTRYPOINT ["/usr/bin/ng", "serve", "--port", "80", "--host", "0.0.0.0"]
-
+COPY --from=frontend_temp /app/dist /usr/share/nginx/html
+EXPOSE 80
 

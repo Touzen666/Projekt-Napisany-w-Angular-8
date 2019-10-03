@@ -2,4 +2,8 @@ docs/
 node_modules/
 "src — kopia"/
 "src — kopia (2)"/
+docker-compose-*.yml
+.gitattributes
+.gitignore
+.travis.yml
 
