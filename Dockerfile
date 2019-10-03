@@ -29,8 +29,7 @@ RUN npm install --unsafe-perm -g angular-cli && \
     npm install -g @angular/cli && \
     ng set --global warnings.packageDeprecation=false && \
     mkdir -p /usr/lib/node_modules/angular-cli/node_modules/node-sass/vendor && \
-
-RUN npm run build -- c- production
+    npm run build -- c- production
 
 FROM nginx:latest AS frontend
 COPY --from=frontend_temp /app/dist /usr/share/nginx/html

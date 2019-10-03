@@ -36,8 +36,8 @@ services:
       - projekt-napisany-w-angular-8
   frontend:
     image: touzen666/projekt-napisany-w-angular-8/frontend
-    ports:
-      - "80:80"
+    expose:
+      - "80"
     deploy:
       mode: replicated
       endpoint_mode: dnsrr
@@ -48,7 +48,24 @@ services:
         condition: on-failure
     networks:
        - projekt-napisany-w-angular-8
-       - bridge
+  nginx:
+    image: touzen666/projekt-napisany-w-angular-8/nginx
+    ports:
+      - "80:80"
+    links:
+      - frontend
+      - backend
+    deploy:
+      mode: replicated
+      endpoint_mode: dnsrr
+      replicas: 2
+      update_config:
+        parallelism: 1
+      restart_policy:
+        condition: on-failure
+      networks:
+        - projekt-napisany-w-angular-8
+        - bridge
 volumes:
   mysql:
 networks:
