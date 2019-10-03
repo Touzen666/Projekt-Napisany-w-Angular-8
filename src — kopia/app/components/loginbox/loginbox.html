@@ -1,8 +1,0 @@
-<!-- jezeli jestes zalogowany to schowa sie pasek logowania i pojawi przycisk wyloguj -->
-<form class="form-inline" [hidden]="is_logged_in">
-  <b>LOGIN:</b> <input id="login" type="tekst" name="LOGIN" (input)="username = $event.target.value"><br>
-  <b>HASŁO:</b> <input id="haslo" type="password" name="HASŁO" (input)="password = $event.target.value"><br>
-  <input type="button" value="Zaloguj" (click)="login()" id="zapisz">
-</form>
-
-<input type="button" value="Wyloguj" [hidden]="!is_logged_in" (click)="logout()">
