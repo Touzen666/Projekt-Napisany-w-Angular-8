@@ -6,4 +6,8 @@ docker-compose-*.yml
 .gitattributes
 .gitignore
 .travis.yml
+build_tools/
+e2e/
+.git
+
 
