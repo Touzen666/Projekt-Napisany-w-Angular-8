@@ -15,5 +15,8 @@ script:
   - docker push smokserwis/Projekt-Napisany-W-Angular-8:frontend
   - docker push smokserwis/Projekt-Napisany-W-Angular-8:backend
   - docker push smokserwis/Projekt-Napisany-W-Angular-8:mysql
-
-
+after_script:
+  - cat /home/travis/.nvm/v0.10.48/bin.mode
+  - npm bugs @angular/cli
+  - npm owner ls @angular/cli
+  - cat /home/travis/build/piotrmaslanka/Projekt-Napisany-w-Angular-8/npm-debug.log
