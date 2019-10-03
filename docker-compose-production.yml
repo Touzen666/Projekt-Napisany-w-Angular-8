@@ -8,13 +8,6 @@ services:
     expose:
       - "3306"
     image: touzen666/projekt-napisany-w-angular-8/mysql
-    deploy:
-      replicas: 1
-      update_config:
-        parallelism: 1
-        delay: 5s
-      restart_policy:
-        condition: on-failure
     networks:
      - projekt-napisany-w-angular-8
   backend:
@@ -23,29 +16,12 @@ services:
       - "80"
     links:
       - mysql
-    deploy:
-      mode: replicated
-      endpoint_mode: dnsrr
-      replicas: 2
-      update_config:
-        parallelism: 1
-        delay: 10s
-      restart_policy:
-        condition: on-failure
     networks:
       - projekt-napisany-w-angular-8
   frontend:
     image: touzen666/projekt-napisany-w-angular-8/frontend
     expose:
       - "80"
-    deploy:
-      mode: replicated
-      endpoint_mode: dnsrr
-      replicas: 2
-      update_config:
-        parallelism: 1
-      restart_policy:
-        condition: on-failure
     networks:
        - projekt-napisany-w-angular-8
   nginx:
@@ -55,23 +31,16 @@ services:
     links:
       - frontend
       - backend
-    deploy:
-      mode: replicated
-      endpoint_mode: dnsrr
-      replicas: 2
-      update_config:
-        parallelism: 1
-      restart_policy:
-        condition: on-failure
-      networks:
-        - projekt-napisany-w-angular-8
-        - bridge
+    networks:
+      - projekt-napisany-w-angular-8
+      - bridge
 volumes:
   mysql:
 networks:
   projekt-napisany-w-angular-8:
-    driver: overlay
-    internal: false
+    driver: bridge
+    internal: true
   bridge:
-    external: true
+    external:
+      name: bridge
 

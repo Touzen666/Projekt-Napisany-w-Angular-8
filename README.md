@@ -22,9 +22,11 @@ First download Docker Toolbox. Then, having a Docker instance, issue the followi
 ```bash
 git clone https://github.com/Touzen666/Projekt-Napisany-w-Angular-8.git
 cd Projekt-Napisany-w-Angular-8
+docker swarm init
 docker-compose up -d
 ```
-Just pass up the proper HOSTNAME that nginx is going to react to in it's environment variables of *HOSTNAME*.
+Just pass up the proper HOSTNAME that nginx is going to react to in it's environment variables of *HOSTNAME*, by 
+editing [this file](docker-compose-producton.yml).
 And enjoy your application at http://192.168.99.100
 
 Ad good idea would be to install a Portainer to manage all these containers. You can do it via

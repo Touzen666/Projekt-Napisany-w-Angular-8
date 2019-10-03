@@ -26,7 +26,7 @@ RUN npm install --unsafe-perm -g angular-cli && \
     npm install -g @angular/cli && \
     ng set --global warnings.packageDeprecation=false && \
     mkdir -p /usr/lib/node_modules/angular-cli/node_modules/node-sass/vendor && \
-    npm run build -- c- production
+    npm run build -- -c production
 
 # And place the compiled frontend onto a real frontend :D
 FROM nginx:latest AS frontend
