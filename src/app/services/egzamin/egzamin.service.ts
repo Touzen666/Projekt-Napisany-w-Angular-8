@@ -13,7 +13,7 @@ export class EgzaminService {
   public getEgzaminy(): Observable<Egzamin[]> {
     let token = localStorage.getItem('token');
 
-    return this.http.post<Egzamin[]>('http://backend/egzamin', {}, {
+    return this.http.post<Egzamin[]>('/v1/egzamin', {}, {
       headers: {
         Authorization: token
       }
@@ -23,7 +23,7 @@ export class EgzaminService {
   public getPytania(idEgzaminu): Observable<Pytanie[]> {
     let token = localStorage.getItem('token');
 
-    return this.http.post<Pytanie[]>(`http://backend/egzamin/${idEgzaminu}/pytania`, {}, {
+    return this.http.post<Pytanie[]>(`/v1/egzamin/${idEgzaminu}/pytania`, {}, {
       headers: {
         Authorization: token
       }
@@ -34,7 +34,7 @@ export class EgzaminService {
   public getOdpowiedzi(idEgzaminu): Observable<Odpowiedz[]> {
     let token = localStorage.getItem('token');
 
-    return this.http.post<Odpowiedz[]>(`http://localhost:8000/egzamin/${idEgzaminu}/odpowiedzi`, {}, {
+    return this.http.post<Odpowiedz[]>(`/v1/egzamin/${idEgzaminu}/odpowiedzi`, {}, {
       headers: {
         Authorization: token
       }

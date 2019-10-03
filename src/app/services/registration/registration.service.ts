@@ -8,7 +8,7 @@ export class RegistrationService {
 
   public register(imie: string, nazwisko: string, email: string,
                   adres: string, dataurodzenia: string, login: string, haslo: string): any {
-    return this.http.post('http://backend/register', {
+    return this.http.post('/v1/register', {
       imie: imie,
       nazwisko: nazwisko,
       email: email,
