@@ -11,6 +11,8 @@ services:
     build:
       context: mysql
       dockerfile: .
+    networks:
+      - backend
   backend:
     build:
       context: .
@@ -20,14 +22,36 @@ services:
       - "80"
     links:
       - mysql
+    networks:
+      - backend
   frontend:
-    buils:
+    build:
       context: .
       dockerfile: Dockerfile
       target: frontend
     ports:
+      - "80"
+    links:
+      - backend
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    ports:
       - "80:80"
     links:
       - backend
+      - frontend
+    environment:
+      - HOSTNAME="192.168.100.99"
+    networks:
+      - backend
+      - bridge
 volumes:
   mysql:
+networks:
+  backend:
+    internal: true
+  bridge:
+    internal: false
+

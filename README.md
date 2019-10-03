@@ -8,6 +8,9 @@ The main architecture of the application. It splits into three tires:
 
 All of this setup is managed by [docker-compose](https://docs.docker.com/compose/gettingstarted/).
 
+Name of the host should be defined in an environment variable called *HOSTNAME*! This is a must for nginx! Otherwise,
+first available hostname will be used.
+
 # Caveat emptor
 
 Your Docker Toolbox VM by default reports at 192.168.99.100. If it shall report at a different address, make sure to adjust it.
@@ -20,7 +23,7 @@ git clone https://github.com/Touzen666/Projekt-Napisany-w-Angular-8.git
 cd Projekt-Napisany-w-Angular-8
 docker-compose up -d
 ```
-
+Just pass up the proper HOSTNAME that nginx is going to react to in it's environment variables of *HOSTNAME*.
 And enjoy your application at http://192.168.99.100
 
 Ad good idea would be to install a Portainer to manage all these containers. You can do it via

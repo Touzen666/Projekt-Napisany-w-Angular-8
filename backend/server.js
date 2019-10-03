@@ -53,7 +53,7 @@ function authorize(req, res, next) {
 }
 
 //definiujemy sciezke /login a funcja obsluguje zadania klienta
-app.post('/login', function (req, res) {
+app.post('/v1/login', function (req, res) {
     connection.query("SELECT * FROM pracownik WHERE login=? AND haslo=?",
         [req.body.username, req.body.password],
         function (err, result) {
@@ -76,7 +76,7 @@ app.post('/login', function (req, res) {
 
 
 
-app.post('/register', function (req, res) {
+app.post('/v1/register', function (req, res) {
     console.log("/register, request:", req)
 
     connection.query("INSERT into pracownik VALUES (?,?,?,?,?,?,?)",
@@ -95,7 +95,7 @@ app.post('/register', function (req, res) {
         });
 });
 
-app.post('/egzamin', [authorize], function (req, res) {
+app.post('/v1/egzamin', [authorize], function (req, res) {
     connection.query('SELECT * FROM egzamin',
         function (err, egzaminy) {
             if (err) {
@@ -108,7 +108,7 @@ app.post('/egzamin', [authorize], function (req, res) {
     )
 })
 
-app.post('/egzamin/:idEgzaminu/pytania', [authorize], function (req, res) {
+app.post('/v1/egzamin/:idEgzaminu/pytania', [authorize], function (req, res) {
     console.log("Auth:", req.headers);
 
     let query = `
@@ -136,7 +136,7 @@ app.post('/egzamin/:idEgzaminu/pytania', [authorize], function (req, res) {
     )
 })
 
-app.post('/egzamin/:idEgzaminu/odpowiedzi', [authorize], function (req, res) {
+app.post('/v1/egzamin/:idEgzaminu/odpowiedzi', [authorize], function (req, res) {
     console.log("Auth:", req.headers);
 
     let query = `
@@ -164,7 +164,7 @@ app.post('/egzamin/:idEgzaminu/odpowiedzi', [authorize], function (req, res) {
     )
 })
 
-app.post('/pracownicy/:idUzytkowina', [authorize], function (req, res, next) {
+app.post('/v1/pracownicy/:idUzytkowina', [authorize], function (req, res, next) {
     if (req.params.idUzytkowina !== "current") {
         next("niewpierane!")
     }

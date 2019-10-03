@@ -1,5 +1,4 @@
 version: '3.7'
-# To by ran on production
 services:
   mysql:
     volumes:
@@ -8,16 +7,18 @@ services:
       - "3306:3306"
     expose:
       - "3306"
-    image: smokserwis/projekt-napisany-w-angular-8:mysql
+    image: touzen666/projekt-napisany-w-angular-8/mysql
     deploy:
-     replicas: 1
-     update_config:
-       parallelism: 1
-       delay: 5s
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 5s
       restart_policy:
         condition: on-failure
+    networks:
+     - projekt-napisany-w-angular-8
   backend:
-    image: smokserwis/projekt-napisany-w-angular-8:backend
+    image: touzen666/projekt-napisany-w-angular-8/backend
     expose:
       - "80"
     links:
@@ -29,24 +30,31 @@ services:
       update_config:
         parallelism: 1
         delay: 10s
-        restart_policy: on-failure
+      restart_policy:
+        condition: on-failure
+    networks:
+      - projekt-napisany-w-angular-8
   frontend:
-    image: smokserwis/projekt-napisany-w-angular-8:frontend
+    image: touzen666/projekt-napisany-w-angular-8/frontend
     ports:
       - "80:80"
-    links:
-      - backend
     deploy:
       mode: replicated
       endpoint_mode: dnsrr
       replicas: 2
       update_config:
         parallelism: 1
-        restart_policy: on-failure
+      restart_policy:
+        condition: on-failure
     networks:
-      - projekt-napisany-w-angular-8
+       - projekt-napisany-w-angular-8
+       - bridge
 volumes:
   mysql:
 networks:
   projekt-napisany-w-angular-8:
     driver: overlay
+    internal: false
+  bridge:
+    external: true
+

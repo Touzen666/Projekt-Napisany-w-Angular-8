@@ -2,21 +2,12 @@ language: node_js
 services:
   - docker
 before_install:
-  - docker pull smokserwis/build:node10
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 script:
-  - ng set --global warnings.packageDeprecation=false && \
-  - mkdir -p /usr/lib/node_modules/angular-cli/node_modules/node-sass/vendor && \
-  - npm install --unsafe-perm -g angular-cli && \
-  - npm install -g @angular/cli
-  - docker build --target backend -t Projekt-Napisany-W-Angular-8/backend:latest .
-  - docker build --target frontend -t Projekt-Napisany-W-Angular-8/frontend:latest .
-  - docker build Projekt-Napisany-W-Angular-8/mysql:latest mysql
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push smokserwis/Projekt-Napisany-W-Angular-8:frontend
-  - docker push smokserwis/Projekt-Napisany-W-Angular-8:backend
-  - docker push smokserwis/Projekt-Napisany-W-Angular-8:mysql
-after_script:
-  - cat /home/travis/.nvm/v0.10.48/bin.mode
-  - npm bugs @angular/cli
-  - npm owner ls @angular/cli
-  - cat /home/travis/build/piotrmaslanka/Projekt-Napisany-w-Angular-8/npm-debug.log
+  - bash build_tools/build_images.sh
+deploy:
+  - provider: script
+    script: bash build_tools/push_images.sh
+    on:
+      branch: master
+
