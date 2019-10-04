@@ -4,9 +4,7 @@ services:
 before_install:
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 script:
-  - bash build_tools/build_images.sh
-deploy:
-  provider: dockerhub
-  script: build_tools/push_images.sh
-  on:
-    branch: master
+  - bash build_tools/build_and_push.sh
+  - bash build_tools/push_images.sh
+
+
