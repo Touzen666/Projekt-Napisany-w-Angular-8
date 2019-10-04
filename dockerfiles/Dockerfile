@@ -35,7 +35,7 @@ FROM node:slim AS backend
 WORKDIR /app
 COPY --from=core /app/node_modules /app/mode_modules
 ADD dockerfiles/backend/server.js /app/server.js
-ENTRYPOINT ["/usr/bin/node", "server.js"]
+ENTRYPOINT ["/usr/local/bin/node", "server.js"]
 EXPOSE 80
 # Port that the backend will listen on. Don't fix it.
 ENV PORT=80

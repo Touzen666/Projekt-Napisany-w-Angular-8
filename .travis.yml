@@ -10,4 +10,3 @@ deploy:
   script: build_tools/push_images.sh
   on:
     branch: master
-
