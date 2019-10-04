@@ -7,7 +7,7 @@ if [ -z "$HOSTNAME" ] ; then
   echo "Grabbing a default hostname of ${HOSTNAME}"
 fi
 
-sed -i "s/SERVER_NAMES/${HOSTNAME}/g" /etc/nginx/nginx.conf
+sed -i "s/SERVERNAMES/${HOSTNAME}/g" /etc/nginx/nginx.conf
 echo "Starting with a hostname of ${HOSTNAME}"
 
 exec nginx -g 'daemon off;' "$@"
