@@ -31,4 +31,4 @@ ADD dockerfiles/backend/server.js /app/server.js
 ENTRYPOINT ["/usr/local/bin/node", "server.js"]
 EXPOSE 80
 # Port that the backend will listen on. Don't fix it.
-ENV PORT=80
+ENV PORT=8080
