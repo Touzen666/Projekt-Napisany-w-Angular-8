@@ -7,19 +7,19 @@ services:
       - "3306:3306"
     expose:
       - "3306"
-    image: touzen666/projekt-napisany-w-angular-8/mysql
+    image: touzen666/projekt8/mysql
     networks:
-     - projekt-napisany-w-angular-8
+     - projekt8
   backend:
-    image: touzen666/projekt-napisany-w-angular-8/backend
+    image: touzen666/projekt8/backend
     expose:
       - "80"
     links:
       - mysql
     networks:
-      - projekt-napisany-w-angular-8
+      - projekt8
   nginx:
-    image: touzen666/projekt-napisany-w-angular-8/nginx
+    image: touzen666/projekt8/nginx
     ports:
       - "80:80"
     environment:
@@ -27,12 +27,12 @@ services:
     links:
       - backend
     networks:
-      - projekt-napisany-w-angular-8
+      - projekt8
       - bridge
 volumes:
   mysql:
 networks:
-  projekt-napisany-w-angular-8:
+  projekt8:
     driver: bridge
     internal: true
   bridge:
