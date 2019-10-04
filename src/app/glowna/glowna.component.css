@@ -82,7 +82,7 @@ article {
 
 H2 {
   -webkit-text-decoration: underline #003FEB;
-          text-decoration: underline #003FEB;
+  text-decoration: underline #003FEB;
 }
 
 #zarejstruj {
@@ -95,4 +95,5 @@ H2 {
   color: white;
   background-color: #003FEB;
 }
+
 /*# sourceMappingURL=glowna.component.css.map */

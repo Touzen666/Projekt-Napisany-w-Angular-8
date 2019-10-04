@@ -1,7 +1,7 @@
-import { Injectable, Directive } from '@angular/core'
+import {Directive, Injectable} from '@angular/core'
 
-import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http'
+import {Observable} from 'rxjs';
 
 @Injectable()
 @Directive({
@@ -9,9 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-    getCurrentPracownik(): Observable<Pracownik> {
+  getCurrentPracownik(): Observable<Pracownik> {
 
     return this.http.post<Pracownik>(`/v1/pracownicy/current`, {});
   }

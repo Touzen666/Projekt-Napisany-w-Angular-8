@@ -115,6 +115,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "outsourcing-pl-app"
 }

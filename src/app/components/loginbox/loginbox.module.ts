@@ -1,15 +1,15 @@
-import { LoginBoxComponent } from './loginbox.component';
-import { NgModule } from '@angular/core';
+import {LoginBoxComponent} from './loginbox.component';
+import {NgModule} from '@angular/core';
 
 @NgModule({
-    declarations: [
-        LoginBoxComponent
-    ],
-    exports: [
-        LoginBoxComponent
-    ]
+  declarations: [
+    LoginBoxComponent
+  ],
+  exports: [
+    LoginBoxComponent
+  ]
 })
 class LoginBoxModule {
 }
 
-export { LoginBoxComponent, LoginBoxModule };
+export {LoginBoxComponent, LoginBoxModule};

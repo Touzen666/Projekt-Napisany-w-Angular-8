@@ -1,6 +1,5 @@
-import { Injectable, Component, Directive } from '@angular/core'
-import { Observable } from 'rxjs'
-import { HttpClient } from '@angular/common/http'
+import {Directive, Injectable} from '@angular/core'
+import {HttpClient} from '@angular/common/http'
 
 interface ReturnToken {
   token: string;
@@ -11,9 +10,10 @@ interface ReturnToken {
   selector: 'login-service'
 })
 export class LoginService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  public getToken(): string|undefined {
+  public getToken(): string | undefined {
     return localStorage.getItem('token');
   }
 
@@ -44,6 +44,7 @@ export class LoginService {
     location.reload();
 
   }
+
   public isLoggedIn(): boolean {
     return !!localStorage.getItem('token')
   }

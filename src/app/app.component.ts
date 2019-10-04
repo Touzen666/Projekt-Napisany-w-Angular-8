@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { LoginService } from './services/login/login.module';
+import {Component} from '@angular/core';
+import {LoginService} from './services/login/login.module';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,8 @@ import { LoginService } from './services/login/login.module';
   ]
 })
 export class AppComponent {
-  constructor(public loginService: LoginService) { }
-
   title = 'outsourcing-pl-app';
+
+  constructor(public loginService: LoginService) {
+  }
 }

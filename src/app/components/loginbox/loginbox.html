@@ -9,11 +9,11 @@
 
 <!-- jezeli jestes zalogowany to schowa sie pasek logowania i pojawi przycisk wyloguj -->
 <form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="login" placeholder="Login" (input)="username = $event.target.value"
-  aria-label="Search">
-  <input class="form-control mr-sm-2" type="password" placeholder="Hasło" aria-label="Login"
-  (input)="password = $event.target.value">
-  <button class="btn btn-primary" (click)="login()" id="login">Zaloguj</button>
+  <input (input)="username = $event.target.value" aria-label="Search" class="form-control mr-sm-2" placeholder="Login"
+         type="login">
+  <input (input)="password = $event.target.value" aria-label="Login" class="form-control mr-sm-2" placeholder="Hasło"
+         type="password">
+  <button (click)="login()" class="btn btn-primary" id="login">Zaloguj</button>
 </form>
 
-<button class="btn btn-primary" [hidden]="!is_logged_in" (click)="logout()" id="logout">Wyloguj</button>
+<button (click)="logout()" [hidden]="!is_logged_in" class="btn btn-primary" id="logout">Wyloguj</button>

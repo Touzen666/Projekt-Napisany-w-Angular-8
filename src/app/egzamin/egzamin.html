@@ -5,17 +5,17 @@
 </div>
 <form>
   <div class="row">
-    <div *ngFor="let pytanie of getPytania(); index as i" style="padding: 5px" class="col-md-6">
+    <div *ngFor="let pytanie of getPytania(); index as i" class="col-md-6" style="padding: 5px">
       <div class="card" style="padding:3px">
         [Kategoria: {{ pytanie.kategoria }}] <br>
-        <b>{{i+1}}. {{ pytanie.tresc }} </b>
+        <b>{{i + 1}}. {{ pytanie.tresc }} </b>
 
         <div *ngIf="getOdpowiedzi() && getOdpowiedzi().hasOwnProperty(pytanie.idPytania)">
-          <div class="form-check" *ngFor=" let odpowiedz of getOdpowiedzi()[pytanie.idPytania]">
-            <input class="form-check-input" type="radio" [name]="pytanie.idPytania"
-              id="{{pytanie.idPytania}}-{{odpowiedz.idOdpowiedzi}}" [value]="odpowiedz.idOdpowiedzi">
-            <label for="{{pytanie.idPytania}}-{{odpowiedz.idOdpowiedzi}}"
-              class="form-check-label">{{ odpowiedz.odpowiedz }}</label>
+          <div *ngFor=" let odpowiedz of getOdpowiedzi()[pytanie.idPytania]" class="form-check">
+            <input [name]="pytanie.idPytania" [value]="odpowiedz.idOdpowiedzi" class="form-check-input"
+                   id="{{pytanie.idPytania}}-{{odpowiedz.idOdpowiedzi}}" type="radio">
+            <label class="form-check-label"
+                   for="{{pytanie.idPytania}}-{{odpowiedz.idOdpowiedzi}}">{{ odpowiedz.odpowiedz }}</label>
 
           </div>
         </div>
@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="div clearfix">
-    <button class="btn btn-primary mb-2 float-right" (click)="register($event)" id="register">Wyślij</button>
+    <button (click)="register($event)" class="btn btn-primary mb-2 float-right" id="register">Wyślij</button>
   </div>
 
 

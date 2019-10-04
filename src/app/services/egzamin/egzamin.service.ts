@@ -1,14 +1,15 @@
-import { Injectable, Directive } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import {Directive, Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 
 @Injectable()
 @Directive({
-    selector: 'egzamin-service'
+  selector: 'egzamin-service'
 })
 export class EgzaminService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   public getEgzaminy(): Observable<Egzamin[]> {
     return this.http.post<Egzamin[]>('/v1/egzamin', {});

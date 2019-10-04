@@ -1,4 +1,4 @@
-import {Injectable, Directive} from '@angular/core'
+import {Directive, Injectable} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 
 @Injectable()

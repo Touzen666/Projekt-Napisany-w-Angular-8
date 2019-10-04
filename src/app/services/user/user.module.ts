@@ -1,8 +1,6 @@
-
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { UserService } from "./user.service";
-import { LoginService } from "../login/login.module";
+import {NgModule} from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
+import {UserService} from "./user.service";
 
 @NgModule({
   declarations: [
@@ -21,4 +19,4 @@ import { LoginService } from "../login/login.module";
 class UserModule {
 }
 
-export { UserService, UserModule };
+export {UserService, UserModule};
