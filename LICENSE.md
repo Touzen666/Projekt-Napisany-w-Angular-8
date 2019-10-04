@@ -2,3 +2,5 @@ Rozwiązanie opracował pan. Bartosz Ochędowski <ochedowski.bartosz@gmail.com>,
 duży charakter estetyczny pozwolił sobie udzielić mi, czyli mgr inż. Piotrowi Maślance 
 <piotr.maslanka@henrietta.com.pl> licencji na niewyłączne rozpowszechnianie tego materiału
 w dowolnym celu.
+
+Udział zresztą łątwo da się ustalić `git blame-m` :)
