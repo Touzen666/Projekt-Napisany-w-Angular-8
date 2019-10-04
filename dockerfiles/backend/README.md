@@ -1,4 +1,1 @@
-The only backend file that supports the entire application.
-
-Kudos!
-
+Jedynie [ten plik](server.js) to aplikacja Node'a przyjmująca przychodzące zapytania dynamiczne.

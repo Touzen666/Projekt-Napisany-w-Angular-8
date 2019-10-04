@@ -1,6 +1,10 @@
-nginx
-=====
+Frontend
+========
 
-A router that routes calls beginning with _/v1/_ to backend, and is being served locally.
+Statyczny serwer, który serwuje statyczne dane (np. aplikację w Angularze) lub przekierowuje do backendu, 
+celem realizacji zadań dynamicznych.
 
-So far, due to lack of certs, it doesn't support HTTPS.
+Zadania dynamiczne to takie, który URI zaczyna się od `/v1/`. Takie idą na trzeci kontener, obraz
+`touzen666/projekt8:backend`
+
+Na razie, ze względu na brak certyfikatów, nie obsługuje HTTP/2 ani HTTPS.

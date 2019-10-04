@@ -1,4 +1,5 @@
 *.sh eol=lf
+*.conf eol=lf
 *.docx -text
 *.doc -text
 *.png -text

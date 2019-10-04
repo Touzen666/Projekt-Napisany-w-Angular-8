@@ -1,1 +1,3 @@
-Not used so far - wouldn't it be better to just discard them entirely?
+Testy end-to-end. Na tym etapie nam zupełnie niepotrzebne.
+
+Po mojemu można to zupełnie usunąć, dokonując odpowiednie zmiany w 
