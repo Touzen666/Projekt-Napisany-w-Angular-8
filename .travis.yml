@@ -6,8 +6,8 @@ before_install:
 script:
   - bash build_tools/build_images.sh
 deploy:
-  - provider: script
-    script: bash build_tools/push_images.sh
-    on:
-      branch: master
+  provider: dockerhub
+  script: build_tools/push_images.sh
+  on:
+    branch: master
 
