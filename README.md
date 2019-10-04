@@ -31,7 +31,7 @@ docker-compose -f docker-compose-production.yml up -d
 ```
 Just pass up the proper HOSTNAME that nginx is going to react to in it's environment variables of *HOSTNAME*, by 
 editing [this file](docker-compose-producton.yml#L32).
-And enjoy your application at http://192.168.99.100
+And enjoy your application at http://192.168.99.100 (or any other IP address that the machine displays).
 
 Ad good idea would be to install a Portainer to manage all these containers. You can do it via
 ```bash
