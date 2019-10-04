@@ -1,3 +1,4 @@
+# Bazówka, z której rozgrywać będziemy backend i frontend
 FROM node:slim AS core
 WORKDIR /app
 ADD package.json /app/package.json
@@ -7,7 +8,7 @@ RUN npm install -g @angular/cli@latest
 RUN npm install
 ADD . /app
 
-
+# Sekcja służąca tylko kompilacji Angulara do HTML/CSS/JS
 FROM node:slim AS prefrontend
 RUN npm install --unsafe-perm -g angular-cli
 RUN npm install -g @angular/cli
@@ -16,9 +17,8 @@ WORKDIR /app
 COPY --from=core /app /app
 RUN npm run build -- -c production
 
-
-FROM nginx AS frontend
 # Reverse proxy : rozdziela zapytania zaczynające się od /v1/ na backend, a resztę na frontend
+FROM nginx AS frontend
 ADD dockerfiles/frontend/nginx.conf /etc/nginx/nginx.conf
 ADD dockerfiles/frontend/entrypoint.sh /entrypoint.sh
 RUN chmod ugo+x /entrypoint.sh

@@ -2,7 +2,7 @@
 
 The main architecture of the application. It splits into four tiers:
 
-1. MySQL database - there's only one
+1. MySQL database - there's only one. The schema is [here](/dockerfiles/mysql/outsourcing_pl.sql).
 2. Backends - might be scaled as per need, these are only to execute orders from frontend and transact with the DB
 3. Frontend and reverse proxy - serves both the static content, and relays the inquiries to backend if such need arises
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Put quickly a default hostname if not available
-if [ -z "$HOSTNAME" ]
+if [ -z "$HOSTNAME" ] ; then
   export HOSTNAME=`hostname`
   echo "Grabbing a default hostname of ${HOSTNAME}"
 fi
