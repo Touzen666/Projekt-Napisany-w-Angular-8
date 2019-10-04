@@ -8,7 +8,7 @@
 </form> -->
 
 <!-- jezeli jestes zalogowany to schowa sie pasek logowania i pojawi przycisk wyloguj -->
-<form class="form-inline my-2 my-lg-0">
+<form class="form-inline my-2 my-lg-0" *ngIf="is_logged_in">
   <div class="bad_password_box" *ngIf="is_bad_password">Złe hasło, spróbuj ponownie!</div>
   <input (input)="username = $event.target.value" aria-label="Search" class="form-control mr-sm-2" placeholder="Login"
          type="login">
