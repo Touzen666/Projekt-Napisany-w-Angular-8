@@ -19,7 +19,7 @@ aplikację i zupełnie nic po nich nie zostaje? Wyobraź sobie, że musisz martw
 
 ## Jak w tej aplikacji budują się obrazy?
 [Build tools](/build_tools) wykorzystują Travisa CI do szybkiego zbudowania i wysłania obrazów do Docker Huba, gdyż
-budują się dużo szybciej niż na stacjonarce!
+budują się dużo szybciej niż na stacjonarce! **Uwaga!** nowe obrazu budowane są tylko na gąłęzi **master**.
 
 ## Jak postawić tą aplikację
 Wszystko jest zarządzane przez tę aplikację. Wystarczy zainstalować najnowsze [docker-compose](https://docs.docker.com/compose/gettingstarted/),
@@ -94,3 +94,12 @@ który o dziwo trzyma jeszcze połączenie i zapisuje i odczytuje z trzeciego el
 Koniecznie zobacz [licencję](LICENSE.md) tej pracy.
 
 Reszta dyskusji o plikach w tym folderze znajduje się w pliku [FILES](FILES.md).
+
+## Uwaga!
+
+Aby Travis CI pomyślnie skompilował obrazy, musi mieć zdefiniowane dwie zmienne, mogą być tajne w CI:
+
+* **DOCKER_USERNAME** - login do Docker Huba
+* **DOCKER_PASSWORD** - hasło do Docker Huba
+
+Obecne ustawienia spełaniają te wymagania.

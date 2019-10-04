@@ -6,5 +6,9 @@ before_install:
 script:
   - bash build_tools/build_images.sh
   - bash build_tools/push_images.sh
+# Buduj i wysyłaj nowa obrazy tylko na gałęzi master
+branches:
+  only:
+    - master
 
 
