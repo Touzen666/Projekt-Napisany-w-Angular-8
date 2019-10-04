@@ -4,10 +4,9 @@ services:
   mysql:
     volumes:
       - mysql:/var/lib/mysql
+    # Ports put out only for your pleasure :D
     ports:
       - "3306:3306"
-    expose:
-      - "3306"
     image: touzen666/projekt8:mysql
     hostname: mysql
     build:
@@ -21,8 +20,6 @@ services:
       context: .
       dockerfile: Dockerfile
       target: backend
-    expose:
-      - "8080"
     depends_on:
       - mysql
     hostname: backend

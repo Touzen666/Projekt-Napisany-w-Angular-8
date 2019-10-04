@@ -16,9 +16,6 @@ FROM nginx AS frontend
 ADD dockerfiles/frontend/nginx.conf /etc/nginx/nginx.conf
 COPY --from=core /app/dist /usr/share/nginx/html
 ENTRYPOINT ["/usr/sbin/nginx"]
-
-# ale zamień ten hostname na jakiś bardziej użyteczny, proszę
-# ENV HOSTNAME=<will be as default as reported by system's hostname command>
 EXPOSE 80
 
 FROM node:slim AS backend
@@ -26,6 +23,4 @@ WORKDIR /app
 COPY --from=core /app /app
 ADD dockerfiles/backend/server.js /app/server.js
 ENTRYPOINT ["/usr/local/bin/node", "server.js"]
-EXPOSE 80
-# Port that the backend will listen on. Don't fix it.
-ENV PORT=8080
+EXPOSE 8080
