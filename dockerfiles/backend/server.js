@@ -64,7 +64,7 @@ app.post('/v1/login', function (req, res) {
         connection.query("INSERT into sesje VALUES (?,?)",
           [null, result[0].idPracownik],
           function (err, token_result) {
-            if (err) next(err);
+            if (err) throw err;
             console.log("Zalogowano, token:", token_result.insertId)
             res.json({token: token_result.insertId});
           }

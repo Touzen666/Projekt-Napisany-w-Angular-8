@@ -7,8 +7,12 @@ services:
     image: touzen666/projekt8:mysql
     expose:
       - "3306"
+    ports:
+      - "3306:3306"
     hostname: mysql
+    restart: "on-failure"
   backend:
+    restart: "on-failure"
     image: touzen666/projekt8:backend
     hostname: backend
     depends_on:
