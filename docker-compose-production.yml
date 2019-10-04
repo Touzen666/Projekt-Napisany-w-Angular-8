@@ -7,19 +7,19 @@ services:
       - "3306:3306"
     expose:
       - "3306"
-    image: touzen666/projekt8/mysql
+    image: touzen666/projekt8:mysql
     networks:
      - projekt8
   backend:
-    image: touzen666/projekt8/backend
+    image: touzen666/projekt8:backend
     expose:
       - "80"
     links:
       - mysql
     networks:
       - projekt8
-  nginx:
-    image: touzen666/projekt8/nginx
+  frontend:
+    image: touzen666/projekt8:frontend
     ports:
       - "80:80"
     environment:

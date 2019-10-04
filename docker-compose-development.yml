@@ -8,14 +8,14 @@ services:
       - "3306:3306"
     expose:
       - "3306"
-    image: touzen666/projekt8/mysql
+    image: touzen666/projekt8:mysql
     build:
       context: dockerfiles/mysql
       dockerfile: .
     networks:
       - backend
   backend:
-    image: touzen666/projekt8/backend
+    image: touzen666/projekt8:backend
     build:
       context: .
       dockerfile: Dockerfile
@@ -26,10 +26,10 @@ services:
       - mysql
     networks:
       - backend
-  nginx:
-    image: touzen666/projekt8/nginx
+  frontend:
+    image: touzen666/projekt8:frontend
     build:
-      context: dockerfiles/nginx
+      context: dockerfiles/frontend
       dockerfile: dockerfiles/Dockerfile
     ports:
       - "80:80"
