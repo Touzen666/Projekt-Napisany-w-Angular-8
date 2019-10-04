@@ -9,7 +9,7 @@
         <img src="assets/hands.jpg" alt="hands" height="220" width="320">
 
         <H3>Firma 1</H3>
-        <a *ngFor="let egzamin of egzaminy" [routerLink]="['/egzamin/', egzamin.idEgzaminu]">
+        <a *ngFor="let egzamin of getEgzaminy()" [routerLink]="['/egzamin/', egzamin.idEgzaminu]">
             {{ egzamin.nazwa }}
         </a>
     </div>
@@ -18,7 +18,7 @@
     <div>
         <img src="assets/laptop.jpg" alt="laptop" height="220" width="320">
         <H3>Firma 2</H3>
-        <a *ngFor="let egzamin of egzaminy" [routerLink]="['/egzamin/', egzamin.idEgzaminu]">
+        <a *ngFor="let egzamin of getEgzaminy()" [routerLink]="['/egzamin/', egzamin.idEgzaminu]">
             {{ egzamin.nazwa }}
         </a>
 
@@ -27,7 +27,7 @@
         <img src="assets/man.jpg" alt="man" height="220" width="320">
 
         <H3>Firma 3</H3>
-        <a *ngFor="let egzamin of egzaminy" [routerLink]="['/egzamin/', egzamin.idEgzaminu]">
+        <a *ngFor="let egzamin of getEgzaminy()" [routerLink]="['/egzamin/', egzamin.idEgzaminu]">
             {{ egzamin.nazwa }}
         </a>
     </div>
@@ -41,7 +41,7 @@
         <div class="card-body">
           <h5 class="card-title">Firma 1</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a *ngFor="let egzamin of egzaminy" [routerLink]="['/egzamin/', egzamin.idEgzaminu]" class="btn btn-primary">{{ egzamin.nazwa }}</a>
+          <a *ngFor="let egzamin of getEgzaminy()" [routerLink]="['/egzamin/', egzamin.idEgzaminu]" class="btn btn-primary">{{ egzamin.nazwa }}</a>
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
         <div class="card-body">
             <h5 class="card-title">Firma 2</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a *ngFor="let egzamin of egzaminy" [routerLink]="['/egzamin/', egzamin.idEgzaminu]" class="btn btn-primary">{{ egzamin.nazwa }}</a>
+            <a *ngFor="let egzamin of getEgzaminy()" [routerLink]="['/egzamin/', egzamin.idEgzaminu]" class="btn btn-primary">{{ egzamin.nazwa }}</a>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
           <div class="card-body">
               <h5 class="card-title">Firma 3</h5>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a *ngFor="let egzamin of egzaminy" [routerLink]="['/egzamin/', egzamin.idEgzaminu]" class="btn btn-primary">{{ egzamin.nazwa }}</a>
+              <a *ngFor="let egzamin of getEgzaminy()" [routerLink]="['/egzamin/', egzamin.idEgzaminu]" class="btn btn-primary">{{ egzamin.nazwa }}</a>
           </div>
         </div>
       </div>

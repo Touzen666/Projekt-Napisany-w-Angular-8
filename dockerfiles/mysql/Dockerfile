@@ -1,4 +1,5 @@
 FROM mysql:5.7.9
+# Baza danych, która umie sobie załadować dane, jak ich nie ma
 
 ENV MYSQL_ROOT_PASSWORD=testpassword
 ENV MYSQL_DATABASE=outsourcing.pl

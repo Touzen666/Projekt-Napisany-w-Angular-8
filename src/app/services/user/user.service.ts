@@ -1,23 +1,19 @@
-import { Injectable } from '@angular/core'
+import { Injectable, Directive } from '@angular/core'
 
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
-
-
 @Injectable()
+@Directive({
+  selector: 'user-service'
+})
 export class UserService {
+
   constructor(private http: HttpClient) { }
 
-  getCurrentPracownik(): Observable<Pracownik> {
+    getCurrentPracownik(): Observable<Pracownik> {
 
-    let token = localStorage.getItem('token');
-
-    return this.http.post<Pracownik>(`/v1/pracownicy/current`, {}, {
-      headers: {
-        Authorization: token
-      }
-    });
+    return this.http.post<Pracownik>(`/v1/pracownicy/current`, {});
   }
 }
 

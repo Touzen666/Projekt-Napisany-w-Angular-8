@@ -14,6 +14,10 @@ export class OfertyPracyPage {
 
     private egzaminy: Egzamin[];
 
+    public getEgzaminy(): Egzamin[] {
+      return this.egzaminy;
+    }
+
     ngOnInit() {
         this.egzaminService.getEgzaminy().subscribe(data => (this.egzaminy = data));
     }

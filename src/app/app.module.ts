@@ -14,6 +14,8 @@ import { LoginBoxModule } from './components/loginbox/loginbox.module';
 import { FooterBoxModule } from './components/footerbox/footer.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { LoginServiceModule } from "./services/login/login.module";
+import { httpInterceptorProviders } from "./http-interceptors";
 
 
 @NgModule({
@@ -32,11 +34,13 @@ import { RouterModule } from '@angular/router';
     KontoModule,
     LoginBoxModule,
     FooterBoxModule,
+    // dodałem tutaj co najmniej 3 moduły, o których zapomniałęś
     RouterModule,
-
+    EgzaminModule,
+    LoginServiceModule,
     NgbModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable, Component, Directive } from '@angular/core'
 import { Observable } from 'rxjs'
 import { HttpClient } from '@angular/common/http'
 
@@ -7,8 +7,24 @@ interface ReturnToken {
 }
 
 @Injectable()
+@Directive({
+  selector: 'login-service'
+})
 export class LoginService {
   constructor(private http: HttpClient) { }
+
+  public getToken(): string|undefined {
+    return localStorage.getItem('token');
+  }
+
+  // Zwróć gotowe optionsy dla innych wywołań
+  public getOptions(): object {
+    return {
+      headers: {
+        Authorization: this.getToken()
+      }
+    };
+  }
 
   public login(login: string, password: string, on_success: any): any {
     return this.http.post<ReturnToken>('/v1/login', {

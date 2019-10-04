@@ -1,7 +1,7 @@
 const express = require('express');
 app = express();
 bodyParser = require('body-parser');
-port = process.env.PORT || 8000;
+port = process.env.PORT || 80;
 cors = require('cors');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -192,5 +192,5 @@ app.post('/v1/pracownicy/:idUzytkowina', [authorize], function (req, res, next) 
         }
     )
 })
-app.listen(80);
-console.info("Server listening on 80")
+app.listen(port);
+console.info("Server listening on "+port)

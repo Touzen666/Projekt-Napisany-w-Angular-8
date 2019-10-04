@@ -1,14 +1,13 @@
-
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { EgzaminService, Egzamin } from './egzamin.service';
 
 @NgModule({
     declarations: [
-        EgzaminService
+      EgzaminService
     ],
     providers: [
-        EgzaminService
+      EgzaminService
     ],
     imports: [
         HttpClientModule

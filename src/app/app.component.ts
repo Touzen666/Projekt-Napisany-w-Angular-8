@@ -10,7 +10,7 @@ import { LoginService } from './services/login/login.module';
   ]
 })
 export class AppComponent {
-  constructor(private loginService: LoginService) { }
+  constructor(public loginService: LoginService) { }
 
   title = 'outsourcing-pl-app';
 }

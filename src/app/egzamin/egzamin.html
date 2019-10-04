@@ -13,9 +13,9 @@
         <div *ngIf="getOdpowiedzi() && getOdpowiedzi().hasOwnProperty(pytanie.idPytania)">
           <div class="form-check" *ngFor=" let odpowiedz of getOdpowiedzi()[pytanie.idPytania]">
             <input class="form-check-input" type="radio" [name]="pytanie.idPytania"
-              id="{{pytanie.idPytania}}-{{getOdpowiedzi().idOdpowiedzi}}" [value]="getOdpowiedzi().idOdpowiedzi">
-            <label for="{{pytanie.idPytania}}-{{getOdpowiedzi().idOdpowiedzi}}"
-              class="form-check-label">{{ getOdpowiedzi().odpowiedz }}</label>
+              id="{{pytanie.idPytania}}-{{odpowiedz.idOdpowiedzi}}" [value]="odpowiedz.idOdpowiedzi">
+            <label for="{{pytanie.idPytania}}-{{odpowiedz.idOdpowiedzi}}"
+              class="form-check-label">{{ odpowiedz.odpowiedz }}</label>
 
           </div>
         </div>

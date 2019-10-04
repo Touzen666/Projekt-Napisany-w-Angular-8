@@ -4,10 +4,10 @@ The main architecture of the application. It splits into four tiers:
 
 1. MySQL database - there's only one
 2. Backends - might be scaled as per need, these are only to execute orders from frontend and transact with the DB
-3. Frontends- you just might throw as many of them. They communicate only directly with the backend.
-4. A reverse proxy - the guys who routes some requests to the frontend, and some to the backend.
+3. Frontend and reverse proxy - serves both the static content, and relays the inquiries to backend if such need arises
 
-See [dockerfiles](/dockerfiles) for where most of these hide.
+
+The solution is completely deployable via Docker. See [dockerfiles](/dockerfiles) for where most of these hide.
 [Build tools](/build_tools) support Travis when generating new images onto Docker Hub.
 
 All of this setup is managed by [docker-compose](https://docs.docker.com/compose/gettingstarted/).

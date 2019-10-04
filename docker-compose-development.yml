@@ -36,14 +36,12 @@ services:
   nginx:
     build:
       context: dockerfiles/nginx
-      dockerfile: Dockerfile
+      dockerfile: dockerfiles/Dockerfile
     ports:
       - "80:80"
     links:
       - backend
       - frontend
-    environment:
-      - HOSTNAME="192.168.100.99"
     networks:
       - backend
       - bridge

@@ -1,7 +1,10 @@
-import {Injectable} from '@angular/core'
+import {Injectable, Directive} from '@angular/core'
 import {HttpClient} from '@angular/common/http'
 
 @Injectable()
+@Directive({
+  selector: 'registration-service'
+})
 export class RegistrationService {
   constructor(private http: HttpClient) {
   }

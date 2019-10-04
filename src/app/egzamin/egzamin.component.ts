@@ -15,6 +15,7 @@ import { Pytanie, Odpowiedz, Egzamin } from '../services/egzamin/egzamin.service
 export class EgzaminPage implements OnInit {
     constructor(private egzaminService: EgzaminService, private activatedRoute: ActivatedRoute) { }
 
+    // Skoro to są zmienne prywatne i chcesz się do nich dossać z poziomu egzamin.html to chociaż porób settery!
     private egzamin: Egzamin;
     private pytania: Pytanie[];
     private odpowiedzi: { [index: number]: Odpowiedz[] };
@@ -22,17 +23,21 @@ export class EgzaminPage implements OnInit {
     public getPytania(): Pytanie[] {
       return this.pytania;
     }
-
     public getEgzamin(): Egzamin {
       return this.egzamin;
     }
-
-    public getOdpowiedzi(): { [index: number]: Odpowiedz[]} {
+    public getOdpowiedzi(): { [index: number]: Odpowiedz[] } {
       return this.odpowiedzi;
     }
+    // co artysta miał na myśli? Ponoć wysyła zatwierdzoną odpowiedź. Ale czym tutaj jest Event?
+    public register(event: Event) {
+      console.log("Zarejestrowano odpowiedź na pytanie!");
+      throw new Error('Zaimplementuj mnie!');
+    }
 
-    ngOnInit() {
-        let idEgzaminu = this.activatedRoute.snapshot.params['id'];
+
+    ngOnInit() {    // przy zmiennych w TypeScript staramy się oznaczać ich typy
+        let idEgzaminu: number = this.activatedRoute.snapshot.params['id'];
 
         this.egzaminService.getEgzaminy().subscribe(data => (this.egzamin = data.find(el => el.idEgzaminu == idEgzaminu)));
 
