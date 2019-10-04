@@ -22,12 +22,11 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 # ale zamień ten hostname na jakiś bardziej użyteczny, proszę
 # ENV HOSTNAME=<will be as default as reported by system's hostname command>
-
 EXPOSE 80
 
 FROM node:slim AS backend
 WORKDIR /app
-COPY --from=core /app/node_modules /app/mode_modules
+COPY --from=core /app /app
 ADD dockerfiles/backend/server.js /app/server.js
 ENTRYPOINT ["/usr/local/bin/node", "server.js"]
 EXPOSE 80

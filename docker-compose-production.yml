@@ -9,33 +9,33 @@ services:
       - "3306"
     image: touzen666/projekt8:mysql
     networks:
-      - projekt8
+      - backend
   backend:
     image: touzen666/projekt8:backend
     expose:
       - "80"
-    links:
+    depends_on:
       - mysql
     networks:
-      - projekt8
+      - backend
   frontend:
+    restart: "on-failure"
     image: touzen666/projekt8:frontend
     ports:
       - "80:80"
     environment:
       - HOSTNAME="localhost"
-    links:
+    depends_on:
       - backend
     networks:
-      - projekt8
-      - bridge
+      - backend
+      - bridged
 volumes:
   mysql:
 networks:
-  projekt8:
+  backend:
     driver: bridge
     internal: true
-  bridge:
-    external:
-      name: bridge
-
+  bridged:
+    internal: false
+    driver: bridge
