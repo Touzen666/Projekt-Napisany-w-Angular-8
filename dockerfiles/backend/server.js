@@ -194,3 +194,4 @@ app.post('/v1/pracownicy/:idUzytkowina', [authorize], function (req, res, next) 
 })
 app.listen(port);
 console.info("Server listening on "+port)
+dock
