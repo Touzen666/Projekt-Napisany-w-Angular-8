@@ -18,12 +18,6 @@ services:
       - mysql
     networks:
       - projekt-napisany-w-angular-8
-  frontend:
-    image: touzen666/projekt-napisany-w-angular-8/frontend
-    expose:
-      - "80"
-    networks:
-       - projekt-napisany-w-angular-8
   nginx:
     image: touzen666/projekt-napisany-w-angular-8/nginx
     ports:

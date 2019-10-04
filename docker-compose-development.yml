@@ -24,15 +24,6 @@ services:
       - mysql
     networks:
       - backend
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: frontend
-    ports:
-      - "80"
-    links:
-      - backend
   nginx:
     build:
       context: dockerfiles/nginx
@@ -41,7 +32,6 @@ services:
       - "80:80"
     links:
       - backend
-      - frontend
     networks:
       - backend
       - bridge

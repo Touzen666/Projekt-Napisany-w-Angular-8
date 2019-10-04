@@ -22,7 +22,7 @@ FROM nginx AS frontend
 ADD dockerfiles/nginx/nginx.conf /etc/nginx/nginx.conf
 ADD dockerfiles/nginx/entrypoint.sh /entrypoint.sh
 RUN chmod ugo+x /entrypoint.sh
-COPY --from=core /app/dist/outsourcing-pl-app /usr/share/nginx/html
+COPY --from=core /app/dist /usr/share/nginx/html
 
 ENTRYPOINT ["/entrypoint.sh"]
 
