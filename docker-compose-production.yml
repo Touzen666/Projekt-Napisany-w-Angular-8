@@ -25,7 +25,6 @@ services:
     environment:
       - HOSTNAME="localhost"
     links:
-      - frontend
       - backend
     networks:
       - projekt-napisany-w-angular-8
