@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  mysql:
+    volumes:
+      - mysql:/var/lib/mysql
+    hostname: mysql
+    image: touzen666/projekt8:mysql
+  backend:
+    hostname: backend
+    image: touzen666/projekt8:backend
+    depends_on:
+      - mysql
+  frontend:
+    restart: "on-failure"
+    image: touzen666/projekt8:frontend
+    ports:
+      - "80:80"
+    environment:
+       - HOSTNAME="localhost"
+    depends_on:
+      - backend
+volumes:
+  mysql:

@@ -1,0 +1,20 @@
+<!-- Ma pobierac zdjęcie od urzytkownika,
+        zapisywac je w bazie i wyswietlac -->
+
+<form>
+  <div class="form-group">
+
+    Login: <input (input)="login = $event.target.value" class="form-control" name="login" type="text"><br>
+    Haslo: <input (input)="haslo = $event.target.value" class="form-control" name="haslo" type="password"><br>
+    Imię: <input (input)="imie = $event.target.value" class="form-control" name="imie" type="text"><br>
+    Nazwisko: <input (input)="nazwisko = $event.target.value" class="form-control" name="nazwisko" type="text"><br>
+    E-mail: <input (input)="email = $event.target.value" class="form-control" name="e-mail" type="email"><br>
+    Adres: <input (input)="adres = $event.target.value" class="form-control" name="adres" type="text"><br>
+    Data urodzenia: <input (input)="dataurodzenia = $event.target.value" class="form-control" name="data_urodzenia"
+                           type="date"><br>
+
+    <button (click)="register($event)" class="btn btn-primary mb-2 float-right" id="register">Wyślij</button>
+
+  </div>
+</form>
+<br>

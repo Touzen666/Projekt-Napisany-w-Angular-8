@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col text-center">
+    <h3>{{ getEgzamin().nazwa }}</h3>
+  </div>
+</div>
+<form>
+  <div class="row">
+    <div *ngFor="let pytanie of getPytania(); index as i" class="col-md-6" style="padding: 5px">
+      <div class="card" style="padding:3px">
+        [Kategoria: {{ pytanie.kategoria }}] <br>
+        <b>{{i + 1}}. {{ pytanie.tresc }} </b>
+
+        <div *ngIf="getOdpowiedzi() && getOdpowiedzi().hasOwnProperty(pytanie.idPytania)">
+          <div *ngFor=" let odpowiedz of getOdpowiedzi()[pytanie.idPytania]" class="form-check">
+            <input [name]="pytanie.idPytania" [value]="odpowiedz.idOdpowiedzi" class="form-check-input"
+                   id="{{pytanie.idPytania}}-{{odpowiedz.idOdpowiedzi}}" type="radio">
+            <label class="form-check-label"
+                   for="{{pytanie.idPytania}}-{{odpowiedz.idOdpowiedzi}}">{{ odpowiedz.odpowiedz }}</label>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="div clearfix">
+    <button (click)="register($event)" class="btn btn-primary mb-2 float-right" id="register">Wyślij</button>
+  </div>
+
+
+</form>

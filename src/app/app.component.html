@@ -1,0 +1,49 @@
+<!-- <nav class="navbar navbar-light bg-light">
+  <li class="nav-item active">
+    <a class="nav-brand">OUTSOURCING.PL</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-item" [routerLink]="['/']">STRONA GŁÓWNA</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-item" [routerLink]="['/oferty']">PRACODAWCY</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-item" *ngIf="loginService.isLoggedIn()" [routerLink]="['/konto']">TWOJE KONTO</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-item" </a>
+  </li>
+  <login-box></login-box>
+</nav> -->
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">OUTSOURCING.PL</a>
+  <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+          data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a [routerLink]="['/']" class="nav-link">STRONA GŁÓWNA</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/oferty']" class="nav-link">PRACODAWCY</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="loginService.isLoggedIn()" [routerLink]="['/konto']" class="nav-link">TWOJE KONTO</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/kontakt']" class="nav-link">KONTAKT</a>
+      </li>
+    </ul>
+    <login-box></login-box>
+  </div>
+</nav>
+
+<div class="container" style="padding-top: 1em;">
+  <router-outlet></router-outlet>
+</div>
+
+<footer-box></footer-box>
