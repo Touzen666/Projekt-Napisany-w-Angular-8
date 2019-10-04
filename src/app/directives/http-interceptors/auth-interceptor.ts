@@ -1,4 +1,4 @@
-import {LoginService} from "../services/login/login.service";
+import {LoginService} from "../../services/login/login.service";
 import {HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 

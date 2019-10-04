@@ -9,11 +9,12 @@
 
 <!-- jezeli jestes zalogowany to schowa sie pasek logowania i pojawi przycisk wyloguj -->
 <form class="form-inline my-2 my-lg-0">
+  <div class="bad_password_box" *ngIf="is_bad_password">Złe hasło, spróbuj ponownie!</div>
   <input (input)="username = $event.target.value" aria-label="Search" class="form-control mr-sm-2" placeholder="Login"
          type="login">
   <input (input)="password = $event.target.value" aria-label="Login" class="form-control mr-sm-2" placeholder="Hasło"
          type="password">
-  <button (click)="login()" class="btn btn-primary" id="login">Zaloguj</button>
+  <button (click)="login($event)" class="btn btn-primary" id="login">Zaloguj</button>
 </form>
 
 <button (click)="logout()" [hidden]="!is_logged_in" class="btn btn-primary" id="logout">Wyloguj</button>

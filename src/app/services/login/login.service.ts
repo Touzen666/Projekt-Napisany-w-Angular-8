@@ -17,16 +17,7 @@ export class LoginService {
     return localStorage.getItem('token');
   }
 
-  // Zwróć gotowe optionsy dla innych wywołań
-  public getOptions(): object {
-    return {
-      headers: {
-        Authorization: this.getToken()
-      }
-    };
-  }
-
-  public login(login: string, password: string, on_success: any): any {
+  public login(login: string, password: string, on_success: any, on_failure: any): any {
     return this.http.post<ReturnToken>('/v1/login', {
       username: login,
       password: password
@@ -35,7 +26,7 @@ export class LoginService {
 
       on_success();
       location.reload();
-    });
+    }, on_failure);
 
   }
 

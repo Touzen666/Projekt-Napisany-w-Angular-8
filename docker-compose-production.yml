@@ -5,15 +5,11 @@ services:
       - mysql:/var/lib/mysql
     hostname: mysql
     image: touzen666/projekt8:mysql
-    networks:
-      - backend
   backend:
     hostname: backend
     image: touzen666/projekt8:backend
     depends_on:
       - mysql
-    networks:
-      - backend
   frontend:
     restart: "on-failure"
     image: touzen666/projekt8:frontend
@@ -23,15 +19,5 @@ services:
        - HOSTNAME="localhost"
     depends_on:
       - backend
-    networks:
-      - backend
-      - bridged
 volumes:
   mysql:
-networks:
-  backend:
-    driver: bridge
-    internal: true
-  bridged:
-    internal: false
-    driver: bridge
