@@ -14,11 +14,8 @@ RUN npm run build -- -c production
 # Reverse proxy : rozdziela zapytania zaczynające się od /v1/ na backend, a resztę na frontend
 FROM nginx AS frontend
 ADD dockerfiles/frontend/nginx.conf /etc/nginx/nginx.conf
-ADD dockerfiles/frontend/entrypoint.sh /entrypoint.sh
-RUN chmod ugo+x /entrypoint.sh
 COPY --from=core /app/dist /usr/share/nginx/html
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/nginx"]
 
 # ale zamień ten hostname na jakiś bardziej użyteczny, proszę
 # ENV HOSTNAME=<will be as default as reported by system's hostname command>
