@@ -7,18 +7,16 @@ services:
     image: touzen666/projekt8:mysql
     expose:
       - "3306"
-    networks:
-      - my-net
+    hostname: mysql
   backend:
     image: touzen666/projekt8:backend
+    hostname: backend
     depends_on:
       - mysql
     links:
       - mysql
     expose:
       - "8080"
-    networks:
-      - my-net
   frontend:
     restart: "on-failure"
     image: touzen666/projekt8:frontend
@@ -28,9 +26,5 @@ services:
       - backend
     links:
       - backend
-    networks:
-      - my-net
 volumes:
   mysql:
-networks:
-  my-net:
