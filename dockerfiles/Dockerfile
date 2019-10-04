@@ -8,7 +8,6 @@ RUN npm install -g @angular/cli@latest
 RUN npm install
 RUN mkdir -p /usr/lib/node_modules/angular-cli/node_modules/node-sass/vendor
 ADD . /app
-WORKDIR /app
 RUN npm run build -- -c production
 
 # Reverse proxy : rozdziela zapytania zaczynające się od /v1/ na backend, a resztę na frontend
