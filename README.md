@@ -6,14 +6,13 @@ The main architecture of the application. It splits into four tiers:
 2. Backends - might be scaled as per need, these are only to execute orders from frontend and transact with the DB
 3. Frontend and reverse proxy - serves both the static content, and relays the inquiries to backend if such need arises
 
-
 The solution is completely deployable via Docker. See [dockerfiles](/dockerfiles) for where most of these hide.
 [Build tools](/build_tools) support Travis when generating new images onto Docker Hub.
 
 All of this setup is managed by [docker-compose](https://docs.docker.com/compose/gettingstarted/).
 
 Name of the host should be defined in an environment variable called *HOSTNAME*! This is a must for nginx! Otherwise,
-first available hostname will be used.
+first available hostname will be used (by default _localhost_ or some pseudorandom numbers assigned by Docker).
 
 You can also view quite comprehensive [docs](/docs). Too bad they're mostly in Polish.
 
@@ -29,7 +28,7 @@ git clone https://github.com/Touzen666/Projekt-Napisany-w-Angular-8.git
 cd Projekt-Napisany-w-Angular-8
 docker-compose -f docker-compose-production.yml up -d
 ```
-Just pass up the proper HOSTNAME that frontend is going to react to in it's environment variables of *HOSTNAME*, by 
+If you care about a proper virtual domain, then set HOSTNAME that frontend is going to react to in it's environment variables of *HOSTNAME*, by 
 editing [this file](docker-compose-producton.yml#L26). By default is will ask the OS about current hostname and adopt that.
 And enjoy your application at http://192.168.99.100 (or any other IP address that the machine displays).
 

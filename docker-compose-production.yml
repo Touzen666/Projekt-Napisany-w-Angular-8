@@ -13,9 +13,11 @@ services:
     hostname: backend
     image: touzen666/projekt8:backend
     expose:
-      - "80"
+      - "8080"
     depends_on:
       - mysql
+    environment:
+      HOSTNAME="192.168.99.103"
     networks:
       - backend
   frontend:
