@@ -63,7 +63,7 @@ plik [SQL](/docs/outsourcing_pl.sql). Można tego na przykład dokonać bezpośr
 Następnie można logować się na niego na port 80. gdyż wystawia go na ten sam port hosta.
 Aplikacja nie obsługuje szyfrowania, co można uzyskać przez zewnętrzne reverse proxy.
 
-## Inne narzęczia do zarzązania kontenerami
+## Inne narzędzia do zarządzania kontenerami
 
 Dobrym pomysłem byłaby instalacja [Portainera](https://hub.docker.com/r/portainer/portainer) do zarządzania swoimi maszynami.
 Instalacja na jednej z nich jest bardzo prosta. Można to zrobić poleceniem:
@@ -72,6 +72,8 @@ Instalacja na jednej z nich jest bardzo prosta. Można to zrobić poleceniem:
 docker volume create portainer_data
 docker run -d --restart always -p 9000:9000 -v portainer_data:/data -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
 ```
+
+Alternatywnie można skorzystać z `./build_tools/setup_portainer.sh`
 
 W przypadku maszyn VirtualBoxa bardzo możliwe, że dostęp uzyskacie pod adresem [http://192.168.99.100:9000](http://192.168.99.100:9000),
 gdzie będziecie musieli założyć sobie konto administratora i wybrać koniecznie **lokalne** zarządzanie węzłem.
