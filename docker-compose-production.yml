@@ -3,14 +3,14 @@ services:
   mysql:
     volumes:
       - mysql:/var/lib/mysql
-    ports:
-      - "3306:3306"
+    hostname: mysql
     expose:
       - "3306"
     image: touzen666/projekt8:mysql
     networks:
       - backend
   backend:
+    hostname: backend
     image: touzen666/projekt8:backend
     expose:
       - "80"

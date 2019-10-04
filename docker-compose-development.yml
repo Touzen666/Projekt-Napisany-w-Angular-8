@@ -9,6 +9,7 @@ services:
     expose:
       - "3306"
     image: touzen666/projekt8:mysql
+    hostname: mysql
     build:
       context: dockerfiles/mysql
       dockerfile: .
@@ -24,6 +25,7 @@ services:
       - "80"
     depends_on:
       - mysql
+    hostname: backend
     networks:
       - backend
   frontend:
