@@ -8,7 +8,6 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql:/var/lib/mysql
-    image: touzen666/projekt8:mysql
     expose:
       - "3306"
     ports:
