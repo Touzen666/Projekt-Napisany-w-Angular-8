@@ -1,37 +1,55 @@
 version: '3.7'
 services:
+  # Pierwsza usługa, baza MySQL
   mysql:
     image: mysql:5.7.9
     environment:
+      # Ustaw hasło
       - MYSQL_ROOT_PASSWORD=testpassword
+      # Ustal domyślną bazę danych
       - MYSQL_DATABASE=outsourcing.pl
+    # Żeby MySQL wpuścił kogoś logującego się hasłem zdalnie
     command: --default-authentication-plugin=mysql_native_password
+    # Żeby dane przetrwały restart kontenera
     volumes:
       - mysql:/var/lib/mysql
+    # Żeby backend mógł się ze mną połączyć
     expose:
       - "3306"
+    # Żeby użytkownik mógł mnie załadować danymi
+    # potem należy to usunąć i dać jeszcze raz docker-compose up -d
     ports:
       - "3306:3306"
+    # Nazwa hosta
     hostname: mysql
+    # Restartuj w razie awarii
     restart: "on-failure"
+  # Backend przetwarzający dynamiczne żądania współpracując z bazą danych
   backend:
+    # Restartuj w razie awarii
     restart: "on-failure"
     image: touzen666/projekt8:backend
+    # Nazwa hosta jest bardzo ważna
     hostname: backend
     depends_on:
       - mysql
     links:
       - mysql
+    # Na porcie 8080 odbiera wiadomości /v1/ za pomocą HTTP
     expose:
       - "8080"
+  # Serwuje nam statycznego Angulara, a jeśli już to puszcza wiadomości dalej
   frontend:
+    # Restart kiedy padniesz
     restart: "on-failure"
     image: touzen666/projekt8:frontend
+    # Wystaw port 80 na świat
     ports:
       - "80:80"
     depends_on:
       - backend
     links:
       - backend
+# Na dole definiujemy tylko jeden, wewnętrzny wolumin - mysql
 volumes:
   mysql:
