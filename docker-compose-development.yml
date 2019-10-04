@@ -12,6 +12,8 @@ services:
     build:
       context: dockerfiles/mysql
       dockerfile: .
+    networks:
+      - backend
   backend:
     image: touzen666/projekt8:backend
     build:
@@ -22,6 +24,8 @@ services:
       - "80"
     depends_on:
       - mysql
+    networks:
+      - backend
   frontend:
     image: touzen666/projekt8:frontend
     build:
@@ -32,5 +36,15 @@ services:
     restart: "on-failure"
     depends_on:
       - backend
+    networks:
+      - bridged
+      - backend
 volumes:
   mysql:
+networks:
+  backend:
+    driver: bridge
+    internal: true
+  bridged:
+    internal: false
+    driver: bridge
