@@ -31,7 +31,6 @@ export class LoginService {
 
   public logout() {
     localStorage.removeItem('token');
-
   }
 
   public isLoggedIn(): boolean {
