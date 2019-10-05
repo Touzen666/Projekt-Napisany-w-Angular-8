@@ -28,7 +28,7 @@ services:
   backend:
     # Restartuj w razie awarii
     restart: "on-failure"
-    image: touzen666/projekt8:backend
+    image: touzen666/projekt8/backend:master
     # Nazwa hosta jest bardzo ważna
 #    hostname: backend
     depends_on:
@@ -42,7 +42,7 @@ services:
   frontend:
     # Restart kiedy padniesz
     restart: "on-failure"
-    image: touzen666/projekt8:frontend
+    image: touzen666/projekt8/frontend:master
     # Wystaw port 80 na świat
     ports:
       - "80:80"
