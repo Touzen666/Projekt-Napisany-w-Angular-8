@@ -8,6 +8,5 @@ e2e/
 .git
 node_modules/
 dist/
-*.MD
 *.md
 

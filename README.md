@@ -17,7 +17,7 @@ pozwala szybko zainstalować własne oprogramowanie. Oracle XE? Już w pięć mi
 takich funkcji linuksa jak [cgroups](http://man7.org/linux/man-pages/man7/cgroups.7.html). Wyobraź sobie, że odinstalowujesz
 aplikację i zupełnie nic po nich nie zostaje? Wyobraź sobie, że musisz martwić się niczym oprócz adresowania sieci.
 
-## Jak w tej aplikacji budują się obrazy?
+### Jak w tej aplikacji budują się obrazy?
 [Build tools](/build_tools) wykorzystują Travisa CI do szybkiego zbudowania i wysłania obrazów do Docker Huba, gdyż
 budują się dużo szybciej niż na stacjonarce! **Uwaga!** nowe obrazu budowane są tylko na gąłęzi **master**.
 
@@ -26,18 +26,17 @@ budują się dużo szybciej niż na stacjonarce! **Uwaga!** nowe obrazu budowane
 Wychodzą z postfixami `backend-nazwaGaleziNaKtorejJEZbugowano`, podobnie też
 `frontend-nazwaGaleziNaKtorejJEZbugowano`.
 
-## Jak postawić tą aplikację
+### Jak postawić tą aplikację
 Wszystko jest zarządzane przez tę aplikację. Wystarczy zainstalować najnowsze [docker-compose](https://docs.docker.com/compose/gettingstarted/),
 a następnie wpisać `docker-compose up -d` pamiętając o tym, aby mieć wolny port 80!
 
-## Gdzie jest więcej dokumentacji
+### Gdzie jest więcej dokumentacji
 Zapewne w folderze [docs](/docs). 
 
-## Caveat emptor
+### Caveat emptor
 Twój Docker Toolbox VM zazwyczaj uruchomi się pod adresem 192.168.99.100. Gdy to zaczyna płatać figle, proszę poprawić swoją zmienną wskazującą na ten adres
 
 ## Jak to uruchomić?
-
 
 ### Mająć Windowsa bez Dockera
 
