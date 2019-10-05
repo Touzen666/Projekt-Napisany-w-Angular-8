@@ -41,11 +41,7 @@ końca linii, a pliki doc/docx/png jako pliki binarne (już raz git mi zepsuł a
 Podczas budowania obrazu Docker wysyła do swojego serwera cały katalog, który zawiera kontekst budowania. 
 W opcjonalnym pliku `.dockerignore` można wybrać te pliki, które mają nie zostać przegrane.
 
-# Pliki RAR
-
-Co one tu robią? To jest do wywalenia na cito.
-
-# tsconfig*
+# ts*.json
 
 Pliki konfiguracyjne języka TypeScript. Nie mam pojęcia, po co ich tyle.
 
