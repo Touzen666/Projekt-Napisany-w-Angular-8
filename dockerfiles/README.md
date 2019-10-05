@@ -3,10 +3,10 @@
 1. Baza danych [MySQL](https://www.mysql.com/) - jedyny element nieruchomy. I tak przy pierwszym uruchomieniu trzeba 
 ją [załadować danymi](/docs/outsourcing_pl.sql) przed użyciem. Obraz to klasyczny, powszechnie dostępny `mysql:5.7.9`.
 2. [Backendy](backend/README.md) - mogą być skalowalne dowolnie, jedynie wykonują dynamiczne polecenia (tzn. zaczynające się od _/v1/_). Wykonują na
-sobie całą machinerię NodeJS. Obrazy to `touzen666/projekt8:backend`. Backend wydaje się być [cięższą partią](https://hub.docker.com/r/touzen666/projekt8/tags)
+sobie całą machinerię NodeJS. Obrazy to `touzen666/projekt8:backend-master`. Backend wydaje się być [cięższą partią](https://hub.docker.com/r/touzen666/projekt8/tags)
 od frontendu.
 3. Frontendy oraz reverse proxy - serwuje zarówno statyczy, skompilowany portal Angular, jak i przekierowuje żądania
-dynamiczne do backendów. Obraz to `touzen666/projekt8:frontend`. Troszę szerzej [tu](frontend/README.md).
+dynamiczne do backendów. Obraz to `touzen666/projekt8:frontend-master`. Troszę szerzej [tu](frontend/README.md).
 
 W katalogu tym nie napotkasz punktu (1), gdyż jest on definiowany bezpośrednio w pliku [docker-compose.yml](/docker-compose.yml).
 

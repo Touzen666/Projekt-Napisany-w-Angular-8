@@ -21,6 +21,11 @@ aplikację i zupełnie nic po nich nie zostaje? Wyobraź sobie, że musisz martw
 [Build tools](/build_tools) wykorzystują Travisa CI do szybkiego zbudowania i wysłania obrazów do Docker Huba, gdyż
 budują się dużo szybciej niż na stacjonarce! **Uwaga!** nowe obrazu budowane są tylko na gąłęzi **master**.
 
+### Z jakimi postfixami wychodzą obrazy?
+
+Wychodzą z postfixami `backend-nazwaGaleziNaKtorejJEZbugowano`, podobnie też
+`frontend-nazwaGaleziNaKtorejJEZbugowano`.
+
 ## Jak postawić tą aplikację
 Wszystko jest zarządzane przez tę aplikację. Wystarczy zainstalować najnowsze [docker-compose](https://docs.docker.com/compose/gettingstarted/),
 a następnie wpisać `docker-compose up -d` pamiętając o tym, aby mieć wolny port 80!
