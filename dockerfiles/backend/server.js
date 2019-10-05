@@ -59,18 +59,20 @@ app.post('/v1/login', function (req, res) {
     function (err, result) {
       if (err) next(err);
       if (result.length == 0) {
-        res.status(403);
+        res.status(403)
+        res.end();
       } else {
         connection.query("INSERT into sesje VALUES (?,?)",
           [null, result[0].idPracownik],
           function (err, token_result) {
             if (err) throw err;
-            console.log("Zalogowano, token:", token_result.insertId)
+            res.status(200);
+            console.log("Zalogowano, token:", token_result.insertId);
             res.json({token: token_result.insertId});
+            res.end();
           }
         );
       }
-      res.end();
     }
   );
 });
