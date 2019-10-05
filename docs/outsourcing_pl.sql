@@ -19,12 +19,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `outsourcing.pl`
---
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `adresyfirm`
 --
 
@@ -416,45 +410,6 @@ CREATE TABLE IF NOT EXISTS `wynikiegzaminu`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8
   COLLATE = utf8_polish_ci;
-
---
--- Indexes for dumped tables
---
-
--- Indexes for table `odpowiedzi`
---
-
---
--- Indexes for table `tworcyegzaminu`
-
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `adresyfirm`
---
-
-
--- AUTO_INCREMENT for table `cv`
---
-
-
---
--- AUTO_INCREMENT for table `egzamin`
-
--- AUTO_INCREMENT for table `odpowiedzi`
---
-
---
--- AUTO_INCREMENT for table `sesje`
---
---
--- AUTO_INCREMENT for table `stanowisko`
-
-
--- AUTO_INCREMENT for table `wczesniejszapraca`
-
-
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
