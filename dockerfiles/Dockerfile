@@ -19,7 +19,7 @@ EXPOSE 80
 
 FROM node:slim AS backend
 WORKDIR /app
-COPY --from=core /app /app
+COPY --from=core /app/node_modules /app/node_modules
 ADD dockerfiles/backend/server.js /app/server.js
 ENTRYPOINT ["/usr/local/bin/node", "server.js"]
 EXPOSE 8080
