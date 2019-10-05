@@ -70,6 +70,7 @@ app.post('/v1/login', function (req, res) {
           }
         );
       }
+      res.end();
     }
   );
 });
