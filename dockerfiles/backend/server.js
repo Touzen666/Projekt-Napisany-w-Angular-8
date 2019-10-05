@@ -66,7 +66,6 @@ app.post('/v1/login', function (req, res) {
           [null, result[0].idPracownik],
           function (err, token_result) {
             if (err) throw err;
-            res.status(200);
             console.log("Zalogowano, token:", token_result.insertId);
             res.json({token: token_result.insertId});
             res.end();

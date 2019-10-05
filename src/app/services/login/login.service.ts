@@ -13,8 +13,13 @@ export class LoginService {
   constructor(private http: HttpClient) {
   }
 
-  public getToken(): string | undefined {
-    return localStorage.getItem('token');
+  public getToken(): string | null {
+    let x = localStorage.getItem('token');
+    if (x === undefined || x === null) {
+      return null;
+    } else {
+      return x;
+    }
   }
 
   public login(login: string, password: string, on_success: any, on_failure: any): any {
