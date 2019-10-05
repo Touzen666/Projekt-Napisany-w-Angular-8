@@ -15,7 +15,7 @@ import {FooterBoxModule} from './components/footerbox/footer.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule} from '@angular/router';
 import {LoginServiceModule} from "./services/login/login.module";
-import {httpInterceptorProviders} from './directives/http-interceptors/index';
+import {httpInterceptorProviders} from "./directives/http-interceptors/index";
 
 
 @NgModule({
@@ -34,7 +34,6 @@ import {httpInterceptorProviders} from './directives/http-interceptors/index';
     KontoModule,
     LoginBoxModule,
     FooterBoxModule,
-    // dodałem tutaj co najmniej 3 moduły, o których zapomniałęś
     RouterModule,
     EgzaminModule,
     LoginServiceModule,
