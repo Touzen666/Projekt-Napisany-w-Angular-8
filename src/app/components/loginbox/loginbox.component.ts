@@ -32,10 +32,11 @@ export class LoginBoxComponent implements OnInit {
       () => (this.is_bad_password = true));
   }
 
-  logout() {
+  logout($event) {
     this.loginService.logout();
     this.is_logged_in = false;
     this.is_bad_password = false;
+    $event.preventDefault();
   }
 
 }

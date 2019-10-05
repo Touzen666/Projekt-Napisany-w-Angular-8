@@ -25,14 +25,12 @@ export class LoginService {
       localStorage.setItem('token', request.token);
 
       on_success();
-      location.reload();
     }, on_failure);
 
   }
 
   public logout() {
     localStorage.removeItem('token');
-    location.reload();
 
   }
 

@@ -21,7 +21,7 @@ services:
     ports:
       - "3306:3306"
     # Nazwa hosta
-    hostname: mysql
+#    hostname: mysql
     # Restartuj w razie awarii
     restart: "on-failure"
   # Backend przetwarzający dynamiczne żądania współpracując z bazą danych
@@ -30,7 +30,7 @@ services:
     restart: "on-failure"
     image: touzen666/projekt8:backend
     # Nazwa hosta jest bardzo ważna
-    hostname: backend
+#    hostname: backend
     depends_on:
       - mysql
     links:
