@@ -3,11 +3,11 @@
 Główna architektura aplikacji składa się z trzech części:
 
 1. Baza danych MySQL - jedyny element nieruchomy. [Tutaj znajduje się schema](/docs/outsourcing_pl.sql), którą
-i tak przy pierwszym uruchomieniu trzeba załadować danymi. Obraz: `touzen666/projekt8:mysql`
+i tak przy pierwszym uruchomieniu trzeba załadować danymi. Obraz standardowy MySQL.
 2. Backendy - mogą być skalowalne dowolnie, jedynie wykonują dynamiczne polecenia (tzn. zaczynające się od _/v1/_). Wykonują na
-sobie całą machinerię NodeJS. Obrazy to `touzen666/projekt8:backend`
+sobie całą machinerię NodeJS. Obrazy to `touzen666/projekt8:backend-master` (czy jaka gam gałąź się zbudowała).
 3. Frontendy oraz reverse proxy - serwuje zarówno statyczy, skompilowany portal Angulars, jak i przekierowuje żądania
-dynamiczne do backendów. Obrazy to Obrazy to `touzen666/projekt8:frontend`
+dynamiczne do backendów. Obrazy to Obrazy to `touzen666/projekt8:frontend-master` (czy jaka gam gałąź się zbudowała).
 
 Rozwiązanie jest trywialne przy użyciu najnowszego [Dockera](https://docs.docker.com) wraz z systemem składania 
 aplikacji [docker-compose](https://docs.docker.com/compose/). Zaczyna on od umieszczenia aplikacji w wydzielonych 
