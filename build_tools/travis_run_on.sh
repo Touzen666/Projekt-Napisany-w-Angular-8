@@ -16,5 +16,10 @@ bash ./build_tools/build_images.sh
 
 if [[ "${TRAVIS_EVENT_TYPE}" == "push" ]]
 then
-    bash ./build_tools/push_images.sh
+  if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]
+  then
+    if [ -z "${TRAVIS_TAG}" ]; then
+      bash ./build_tools/push_images.sh;
+    fi
+  fi
 fi
