@@ -13,8 +13,8 @@ export class LoginBoxComponent implements OnInit {
 
   username: string;
   password: string;
-  is_logged_in: boolean;
-  is_bad_password: boolean = false;
+  isLoggedIn: boolean;
+  isBadPassword: boolean = false;
 
   constructor(private loginService: LoginService) {
   }
@@ -22,20 +22,20 @@ export class LoginBoxComponent implements OnInit {
 
 // zmiennej pobierana jest informacja czy w localStorage znajduje sie ta zmienna
   ngOnInit() {
-    this.is_logged_in = this.loginService.isLoggedIn();
+    this.isLoggedIn = this.loginService.isLoggedIn();
   }
 
 //metody wywolywane po kliknieciu przyciskow
   login($event) {
     $event.preventDefault();
-    this.loginService.login(this.username, this.password, () => (this.is_logged_in = true, this.is_bad_password = false),
-      () => (this.is_bad_password = true));
+    this.loginService.login(this.username, this.password, () => (this.isLoggedIn = true, this.isBadPassword = false),
+      () => (this.isBadPassword = true));
   }
 
   logout($event) {
     this.loginService.logout();
-    this.is_logged_in = false;
-    this.is_bad_password = false;
+    this.isLoggedIn = false;
+    this.isBadPassword = false;
     $event.preventDefault();
   }
 
