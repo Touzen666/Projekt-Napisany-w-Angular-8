@@ -14,7 +14,7 @@
          type="login">
   <input (input)="password = $event.target.value" aria-label="Login" class="form-control mr-sm-2" placeholder="Hasło"
          type="password">
-  <button (click)="login()" class="btn btn-primary" id="login">Zaloguj</button>
+  <button (click)="login($event)" class="btn btn-primary" id="login">Zaloguj</button>
 </form>
 
 <button (click)="logout()" [hidden]="!is_logged_in" class="btn btn-primary" id="logout">Wyloguj</button>

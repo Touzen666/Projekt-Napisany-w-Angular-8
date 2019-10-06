@@ -26,9 +26,10 @@ export class LoginBoxComponent implements OnInit {
   }
 
 //metody wywolywane po kliknieciu przyciskow
-  login() {
+  login($event) {
     this.loginService.login(this.username, this.password, () => (this.is_logged_in = true, this.is_bad_password = false),
       () => (this.is_bad_password = true));
+    $event.preventDefault();
   }
 
   logout() {
