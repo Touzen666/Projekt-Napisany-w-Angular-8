@@ -32,12 +32,10 @@ export class LoginService {
 
   public logout() {
     localStorage.removeItem('token');
-    location.reload();
-
   }
 
   public isLoggedIn(): boolean {
-    return (localStorage.getItem('token') !== undefined);
+    return (!!localStorage.getItem('token'));
   }
 }
 
